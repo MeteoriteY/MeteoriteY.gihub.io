@@ -3,8 +3,8 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Pithos of Water
-subtitle:
+title: APERTURE PSEUDOSCIENCE
+subtitle: LABORATORY
 description: Personal Blog
 author: MeteoriteY
 language: zh-CN
@@ -100,13 +100,13 @@ sitemap:
 # Markdown
 ## https://github.com/chjj/marked
 markdown:
-gfm: true
-pedantic: false
-sanitize: false
-tables: true
-breaks: true
-smartLists: true
-smartypants: true
+  gfm: true
+  pedantic: false
+  sanitize: false
+  tables: true
+  breaks: true
+  smartLists: true
+  smartypants: true
 
 ## Themes: http://hexo.io/themes/
 theme: hexo-theme-papers

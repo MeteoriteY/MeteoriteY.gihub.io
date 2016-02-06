@@ -22,7 +22,7 @@ subnav:
 rss: /atom.xml
 
 # Content
-excerpt_link: Portal  #修改more>>的文字
+excerpt_link: PORTAL  #修改more>>的文字
 fancybox: true
 mathjax: true
 
@@ -34,7 +34,7 @@ open_in_new: false
 
 # Miscellaneous
 #google_analytics: ''
-favicon: /img/favicon.ico
+favicon: /img/Aperture_Science.png
 
 #你的头像url
 avatar: "/img/head.png"
@@ -67,4 +67,4 @@ swift_search:
 #不开启——
 #aboutme: false
 #开启——
-aboutme: To boldly go where no one has gone before.
+aboutme: THE CAKE IS A LIE.

@@ -39,7 +39,7 @@ hexo出自台湾大学生 tommy351 之手，是一个基于Node.js的静态博�
 ### 安装Hexo
 在安装前，检查电脑中是否已安装下列应用程序：（以下地址仅针对Windows）
 Node.js ：[下载](http://nodejs.org/)    
-Git ：[下载](https://git-scm.com/download/win) （PS: 这步可以跳过，因为后面会使用[GitHub Windows](https://github-windows.s3.amazonaws.com/GitHubSetup.exe)，安装时自带了git）
+Git ：[下载](https://git-scm.com/download/win) （PS: 这步可以跳过，因为后面会使用[GitHub Windows](https://github-windows.s3.amazonaws.com/GitHubSetup.exe)，其安装时自带了git）
 
 如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。
 ```bash
@@ -67,31 +67,32 @@ $ npm install
 ```
 
 接下来需要为Hexo安装一些插件：    
-**注意：hexo命令需要在初始化hexo时的文件夹中执行，注意切换地址。**
+**注意：下面的hexo命令需要在初始化hexo时的文件夹中执行，注意切换地址。**
 ```bash
-npm install hexo-generator-index --save
-npm install hexo-generator-archive --save
-npm install hexo-generator-category --save
-npm install hexo-generator-tag --save
-npm install hexo-server --save
-npm install hexo-deployer-git --save
-npm install hexo-deployer-heroku --save
-npm install hexo-deployer-rsync --save
-npm install hexo-deployer-openshift --save
-npm install hexo-renderer-marked --save
-npm install hexo-renderer-stylus --save
-npm install hexo-generator-feed --save
-npm install hexo-generator-sitemap --save
-npm install hexo-git-backup --save
+npm install hexo-generator-index --save #首页生成插件
+npm install hexo-generator-archive --save #归档页生成插件
+npm install hexo-generator-category --save #分类页生成插件
+npm install hexo-generator-tag --save #标签页生成插件
+npm install hexo-server --save #hexo本地服务器插件
+npm install hexo-deployer-git --save #git部署插件
+npm install hexo-deployer-heroku --save #heroku部署插件（选装）
+npm install hexo-deployer-rsync --save #rsync部署插件（选装）
+npm install hexo-deployer-openshift --save #openshift部署插件（选装）
+npm install hexo-renderer-marked --save #markdown语法渲染插件
+npm install hexo-renderer-stylus --save #Stylus渲染插件
+npm install hexo-generator-feed --save #feed生成插件
+npm install hexo-generator-sitemap --save #sitemap生成插件
+npm install hexo-git-backup --save #使用github备份博客
+npm install hexo-renderer-ejs --save #ejs渲染插件
+npm install hexo-tag-bilibili --save #在文章中嵌入bilibili视频
 
 ```
+更多详细信息可以访问[插件](https://hexo.io/plugins/)页面查看相关内容。
 
 执行下面命令成功后，即可在浏览器中打开http://localhost:4000 来查看效果。
 ```bash
 $ hexo server
 ```
-
-
 
 ### 同步静态网页到GitHub
 
@@ -162,10 +163,12 @@ More info: [Deployment](http://hexo.io/docs/deployment.html)
 $ hexo g -d
 
 ```
+
 ### 清除public文件夹和数据库
 ```bash
 $ hexo clean #改动没效果时可先执行此命令，再生成静态文件。
 ```
+
 ## 参考资料
 1. [Hexo官方文档](https://hexo.io/zh-cn/docs/)
 2. luuman的[使用GitHub搭建Hexo博客](http://luuman.github.io/2015/12/21/GitHub+Hexo/)
