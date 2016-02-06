@@ -4,7 +4,7 @@
   <subtitle><![CDATA[LABORATORY]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://meteoritey.github.io/"/>
-  <updated>2016-01-05T14:55:07.613Z</updated>
+  <updated>2016-02-06T18:24:43.569Z</updated>
   <id>http://meteoritey.github.io/</id>
   
   <author>
@@ -13,6 +13,54 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[近期使用bilibili的问题]]></title>
+    <link href="http://meteoritey.github.io/2016/02/07/%E8%BF%91%E6%9C%9F%E4%BD%BF%E7%94%A8bilibili%E7%9A%84%E9%97%AE%E9%A2%98/"/>
+    <id>http://meteoritey.github.io/2016/02/07/近期使用bilibili的问题/</id>
+    <published>2016-02-06T17:56:05.000Z</published>
+    <updated>2016-02-06T18:24:43.569Z</updated>
+    <content type="html"><![CDATA[<h2 id="摘要">摘要</h2><p>最近在上bilibili的时候发现了两个问题：</p>
+<ol>
+<li>不论什么视频加载速度都很慢，换过ip后问题依旧。</li>
+<li>blibili播放器出现乱码，但弹幕可正常显示。<a id="more"></a>
+</li>
+</ol>
+<hr>
+<h2 id="分析">分析</h2><h3 id="第一个问题">第一个问题</h3><ul>
+<li><p>我一开始怀疑是我不小心给bilibili.com设置了代理，但修改代理配置和使用播放器里面的海外加速都没用。</p>
+</li>
+<li><p>在更换ip之后，发现并不是我的网络有问题。</p>
+</li>
+<li><p>在edge下面，速度正常<ruby><rp>(</rp><span class="heimu" title="你知道的太多了">然而edge这货在看视频的时候会卡死……</span><rp>)</rp></ruby>。</p>
+</li>
+<li>初步确定是chrome的问题后，我发现了视频加载速度出现问题的时候，正好和我使用流量节省程序的时间点重合。</li>
+</ul>
+<img src="/2016/02/07/近期使用bilibili的问题/2016-02-07-03.png" alt="流量节省工具" title="流量节省工具">
+<blockquote>
+<p><strong>流量节省工具</strong>，是google最近新推出的网页流量压缩工具。开启后会在加载要访问的网页之前先使用 Google 服务器对其进行压缩，以提高网页的访问速率和有助于用户根据所使用的网络连接的类型在流量消耗方面做出更明智的决策。</p>
+</blockquote>
+<p>感觉网页提升速度也并不明显呐……于是停用插件后问题解决。</p>
+<h3 id="第二个问题">第二个问题</h3><img src="/2016/02/07/近期使用bilibili的问题/2016-02-07-01.png" alt="哔哩哔哩播放器乱码" title="哔哩哔哩播放器乱码">
+<ul>
+<li><p>这个问题困扰我一段时间了，清理缓存和恢复默认设置无效。</p>
+</li>
+<li><p>重装了chrome也没有效果。</p>
+</li>
+</ul>
+<p>经过一段时间的查找，发现了原因所在。<br>因为chrome默认开启了<strong>DirectWrite Windows字体渲染系统</strong>，导致了加载播放器后的乱码。<br>在地址栏中输入chrome://flags回车，进入chrome新功能实验室，找到<strong>停用DirectWrite Windows</strong>这一项，并启用此项即可。<br><img src="/2016/02/07/近期使用bilibili的问题/2016-02-07-02.png" alt="停用DirectWrite Windows" title="停用DirectWrite Windows"></p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<h2 id="摘要">摘要</h2><p>最近在上bilibili的时候发现了两个问题：</p>
+<ol>
+<li>不论什么视频加载速度都很慢，换过ip后问题依旧。</li>
+<li>blibili播放器出现乱码，但弹幕可正常显示。]]>
+    
+    </summary>
+    
+      <category term="软件笔记" scheme="http://meteoritey.github.io/tags/%E8%BD%AF%E4%BB%B6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[Hexo主题修改记录]]></title>
