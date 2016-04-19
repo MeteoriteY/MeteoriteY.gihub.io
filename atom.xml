@@ -4,7 +4,7 @@
   <subtitle><![CDATA[LABORATORY]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://meteoritey.github.io/"/>
-  <updated>2016-03-28T16:09:55.913Z</updated>
+  <updated>2016-04-19T12:29:07.677Z</updated>
   <id>http://meteoritey.github.io/</id>
   
   <author>
@@ -13,6 +13,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title><![CDATA[Windows 资源管理器不断重启的解决方案]]></title>
+    <link href="http://meteoritey.github.io/2016/04/18/Windows%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%8D%E6%96%AD%E9%87%8D%E5%90%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
+    <id>http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/</id>
+    <published>2016-04-18T15:58:31.000Z</published>
+    <updated>2016-04-19T12:29:07.677Z</updated>
+    <content type="html"><![CDATA[<p>不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在我时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。</p>
+<h2 id="<!-_more_->"><a id="more"></a></h2><h2 id="准备工作">准备工作</h2><p>首先需要搞清楚到底是什么问题导致 Windows 资源管理器不断重启，俗话说巧妇难为无米之炊，这里推荐一个好用的工具 <a href="http://www.nirsoft.net/utils/shexview.html" target="_blank" rel="external">ShellExView</a> （英语不好的朋友可以在网页上找到简体中文语言附件，和执行文件放在同一个文件夹即可）。</p>
+<p>这个软件是免安装使用的，下载即可使用。由于此时资源管理器在不断地重启，通过 explorer 找到这个刚下载的压缩包并允许这个程序这个方法不太可行。这时可以让电脑重启加载安全模式来使用 ShellExView：win+R → 键入「msconfig」 → 选项卡中找到「引导」 → 勾选「安全引导」 → 确定并重启电脑。虽然是这么说，反正我是在资源管理器重启间隙迅速打开压缩包的￣▽￣。</p>
+<h2 id="修复问题">修复问题</h2><p>打开 ShellExView 后的界面如下：<br></p>
+<p>现在顶部项目栏中找到「文件创建时间」一栏，让下面的项目以创建时间为序，查找最新的 shell 改动。图中已按创建时间排序，且选中的两个项目是在问题出现的当天创建的，很容易知道这两个文件就是这次问题的罪魁祸首。</p>
+<p>可以在这两项文件的属性里面找到这两个文件的路径位置等相关信息：</p>
+<hr>
+<p>扩展名称          :<br>已禁用            : 是<br>类型              : 复制挂钩处理<br>描述              :<br>版本              :<br>产品名称          :<br>公司              :<br>我的电脑          : 否<br>桌面              : 否<br>控制面板          : 否<br>我的网络位置      : 否<br>整个网络          : 否<br>远程计算机        : 否<br>文件名            :    C:\Users\$username\AppData\Local\Microsoft\Windows\Explorer\Memory\Clean64.dll<br>CLSID             : {2EC77CE8-4DD8-2CF9-102A-DF90C9D8E26A}<br>文件创建时间      : 不适用<br>CLSID 修改时间    : 2016/4/7 星期四 16:02:33<br>微软              : 否<br>文件扩展          : Directory<br>文件属性          :<br>文件大小          : 0<br>.NET 扩展         : 否<br>数字签名          :<br>缺少文件          : 是   </p>
+<hr>
+<p>扩展名称          :<br>已禁用            : 是<br>类型              : 图标覆盖处理<br>描述              :<br>版本              :<br>产品名称          :<br>公司              :<br>我的电脑          : 否<br>桌面              : 否<br>控制面板          : 否<br>我的网络位置      : 否<br>整个网络          : 否<br>远程计算机        : 否<br>文件名            : C:\Users\$username\AppData\Local\Microsoft\Windows\Explorer\Memory\Clean64.dll<br>CLSID             : {1FC77CE8-4DD8-2CF9-102A-DF90C9D8E26A}<br>文件创建时间      : 不适用<br>CLSID 修改时间    : 2016/4/7 星期四 16:02:33<br>微软              : 否<br>文件扩展          :<br>文件属性          :<br>文件大小          : 0<br>.NET 扩展         : 否<br>数字签名          :<br>缺少文件          : 是   </p>
+<hr>
+<p>正是这两个文件导致了 Windows 资源管理器不断重启，禁用这两项文件并在源文件路径中删除之后正常重启就能恢复正常了。</p>
+]]></content>
+    <summary type="html">
+    <![CDATA[<p>不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在我时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。</p>
+<h2 id="<!-_more_->">]]>
+    
+    </summary>
+    
+      <category term="软件笔记" scheme="http://meteoritey.github.io/categories/%E8%BD%AF%E4%BB%B6%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
   
   <entry>
     <title><![CDATA[一点儿随笔]]></title>
@@ -170,42 +199,42 @@
     <link href="http://meteoritey.github.io/2015/01/03/hello-world/"/>
     <id>http://meteoritey.github.io/2015/01/03/hello-world/</id>
     <published>2015-01-02T16:00:00.000Z</published>
-    <updated>2016-01-14T03:21:41.319Z</updated>
-    <content type="html"><![CDATA[<p>本博客使用<a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>强力驱动! 这是我的第一篇博客。同时也是我对hexo使用的笔记。<br>选择hexo的原因主要是想用静态Blog来学习一下GitHub的使用，也能多学习一些css和html知识。<br>还有一个好处，就是可以熟悉Markdown的使用！<ruby><rp>(</rp><span class="heimu" title="你知道的太多了">以及提升逼格</span><rp>)</rp></ruby><br>感谢<a href="http://litten.github.io/" target="_blank" rel="external">Litten</a>提供的<a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a>主题，我挺喜欢这种简约风格的，现在所使用的主题略有修改。</p>
+    <updated>2016-04-18T16:25:33.961Z</updated>
+    <content type="html"><![CDATA[<p>本博客使用 <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a> 强力驱动! 这是我的第一篇博客。同时也是我对 hexo 使用的笔记。<br>选择 hexo 的原因主要是想用静态 Blog 来学习一下 GitHub 的使用，也能多学习一些 css 和 html 知识。<br>还有一个好处，就是可以熟悉 Markdown 的使用！<ruby><rp>(</rp><span class="heimu" title=" 你知道的太多了 "> 以及提升逼格 </span><rp>)</rp></ruby><br>感谢 <a href="http://litten.github.io/" target="_blank" rel="external">Litten</a> 提供的 <a href="https://github.com/litten/hexo-theme-yilia" target="_blank" rel="external">yilia</a> 主题，我挺喜欢这种简约风格的，现在所使用的主题略有修改。</p>
 <a id="more"></a>
 <hr>
 <h2 id="HEXO_+_GitHub_Page_=_Static_Blog">HEXO + GitHub Page = Static Blog</h2><blockquote>
-<p>为什么选择GitHub Pages<br>1、GitHub Pages有免费的代码托管空间，资料自己管理，保存可靠；<br>2、学着用 GitHub，享受 GitHub 的便利，上面有很多大牛，眼界会开阔很多；<br>3、顺便理解 GitHub 工作原理，最好的团队协作流程；<br>4、GitHub建立私有仓库才会收费，所以会有很多开源代码。</p>
-<p>GitHub Pages是什么<br>应用GitHub Pages创建属于自己的个人博客，GitHub将提供免费的空间。<br>免费空间最大不能超过仓库上限1G，同时也不建议添加大于100M的单个文件到仓库中。<br>GitHub提供的域名（用户名+github+io）,在Repository name对应处填写资源名，其需要使用自己的用户名，每个用户名下面只能建立一个，并且资源命名必须符合这样的规则username/username.github.io，之后勾选下面的”Initialize this repository with a README” 。</p>
-<p>hexo出自何人<br>hexo出自台湾大学生 tommy351 之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。</p>
+<p>为什么选择 GitHub Pages<br>1、GitHub Pages 有免费的代码托管空间，资料自己管理，保存可靠；<br>2、学着用 GitHub，享受 GitHub 的便利，上面有很多大牛，眼界会开阔很多；<br>3、顺便理解 GitHub 工作原理，最好的团队协作流程；<br>4、GitHub 建立私有仓库才会收费，所以会有很多开源代码。</p>
+<p>GitHub Pages 是什么<br>应用 GitHub Pages 创建属于自己的个人博客，GitHub 将提供免费的空间。<br>免费空间最大不能超过仓库上限 1G，同时也不建议添加大于 100M 的单个文件到仓库中。<br>GitHub 提供的域名（用户名 + github+io）, 在 Repository name 对应处填写资源名，其需要使用自己的用户名，每个用户名下面只能建立一个，并且资源命名必须符合这样的规则 username/username.github.io，之后勾选下面的”Initialize this repository with a README” 。</p>
+<p>hexo 出自何人<br>hexo 出自台湾大学生 tommy351 之手，是一个基于 Node.js 的静态博客程序，其编译上百篇文字只需要几秒。hexo 生成的静态网页可以直接放到 GitHub Pages，BAE，SAE 等平台上。</p>
 </blockquote>
-<h3 id="安装Hexo">安装Hexo</h3><p>在安装前，检查电脑中是否已安装下列应用程序：（以下地址仅针对Windows）<br>Node.js ：<a href="http://nodejs.org/" target="_blank" rel="external">下载</a><br>Git ：<a href="https://git-scm.com/download/win" target="_blank" rel="external">下载</a> （PS: 这步可以跳过，因为后面会使用<a href="https://github-windows.s3.amazonaws.com/GitHubSetup.exe" target="_blank" rel="external">GitHub Windows</a>，其安装时自带了git）</p>
+<h3 id="安装_Hexo">安装 Hexo</h3><p>在安装前，检查电脑中是否已安装下列应用程序：（以下地址仅针对 Windows）<br>Node.js ：<a href="http://nodejs.org/" target="_blank" rel="external">下载</a><br>Git ：<a href="https://git-scm.com/download/win" target="_blank" rel="external">下载</a> （PS: 这步可以跳过，因为后面会使用 <a href="https://github-windows.s3.amazonaws.com/GitHubSetup.exe" target="_blank" rel="external">GitHub Windows</a>，其安装时自带了 git）</p>
 <p>如果您的电脑中已经安装上述必备程序，那么恭喜您！接下来只需要使用 npm 即可完成 Hexo 的安装。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure></p>
-<h3 id="部署Hexo">部署Hexo</h3><p>安装 Hexo 完成后，需要先创建一个文件夹<folder>，文件目录随意（最好是英文路径），再执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></folder></p>
-<p>新建完成后，指定文件夹的目录如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml <span class="comment">#网站的 配置 信息，您可以在此配置大部分的参数。</span></span><br><span class="line">├── package.json <span class="comment">#应用程序的信息。EJS, Stylus 和 Markdown renderer 已默认安装，您可以自由移除。</span></span><br><span class="line">├── scaffolds <span class="comment">#模版文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。</span></span><br><span class="line">├── <span class="built_in">source</span> <span class="comment">#资源文件夹是存放用户资源的地方。</span></span><br><span class="line">|   ├── _drafts <span class="comment">#除 _posts 文件夹之外，开头命名为 _ (下划线)的文件 / 文件夹和隐藏的文件将会被忽略。</span></span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes <span class="comment">#主题 文件夹。Hexo 会根据主题来生成静态页面。</span></span><br></pre></td></tr></table></figure></p>
-<p>接下来需要为Hexo安装一些插件：<br><strong>注意：下面的hexo命令需要在初始化hexo时的文件夹中执行，注意切换地址。</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save <span class="comment">#首页生成插件</span></span><br><span class="line">npm install hexo-generator-archive --save <span class="comment">#归档页生成插件</span></span><br><span class="line">npm install hexo-generator-category --save <span class="comment">#分类页生成插件</span></span><br><span class="line">npm install hexo-generator-tag --save <span class="comment">#标签页生成插件</span></span><br><span class="line">npm install hexo-server --save <span class="comment">#hexo本地服务器插件</span></span><br><span class="line">npm install hexo-deployer-git --save <span class="comment">#git部署插件</span></span><br><span class="line">npm install hexo-deployer-heroku --save <span class="comment">#heroku部署插件（选装）</span></span><br><span class="line">npm install hexo-deployer-rsync --save <span class="comment">#rsync部署插件（选装）</span></span><br><span class="line">npm install hexo-deployer-openshift --save <span class="comment">#openshift部署插件（选装）</span></span><br><span class="line">npm install hexo-renderer-marked --save <span class="comment">#markdown语法渲染插件</span></span><br><span class="line">npm install hexo-renderer-stylus --save <span class="comment">#Stylus渲染插件</span></span><br><span class="line">npm install hexo-generator-feed --save <span class="comment">#feed生成插件</span></span><br><span class="line">npm install hexo-generator-sitemap --save <span class="comment">#sitemap生成插件</span></span><br><span class="line">npm install hexo-git-backup --save <span class="comment">#使用github备份博客</span></span><br><span class="line">npm install hexo-renderer-ejs --save <span class="comment">#ejs渲染插件</span></span><br><span class="line">npm install hexo-tag-bilibili --save <span class="comment">#在文章中嵌入bilibili视频</span></span><br></pre></td></tr></table></figure></p>
-<p>更多详细信息可以访问<a href="https://hexo.io/plugins/" target="_blank" rel="external">插件</a>页面查看相关内容。</p>
-<p>执行下面命令成功后，即可在浏览器中打开<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 来查看效果。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
-<h3 id="同步静态网页到GitHub">同步静态网页到GitHub</h3><ol>
-<li>需要一个<a href="https://github.com/" target="_blank" rel="external">GitHub</a>的账号。<ruby><rp>(</rp><span class="heimu" title="你知道的太多了">全世界最大同性交友网站客官不来一发吗:D</span><rp>)</rp></ruby></li>
-<li>在主页找到创建仓库按钮<code>New repository</code>，name必须和自己的用户名一致，即<code>meteoritey.github.io</code>。而这个地址也是将来的Blog地址。</li>
-<li>下载<a href="https://github-windows.s3.amazonaws.com/GitHubSetup.exe" target="_blank" rel="external">GitHub Windows</a>并双击安装。</li>
-<li>打开GitHub Windows后，在其右上角设置按钮中修改一个适合的<code>Clone Path</code>和习惯的shell。</li>
-<li>运行桌面上的<code>Git Shell</code>。</li>
-<li>使用<code>cd</code>命令切换到上面初始化后的hexo文件夹中。</li>
-<li><p>使用文本编辑器如Atom，来编辑文件夹中的<code>_config.yml</code>：</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: &lt;repository url&gt; <span class="comment">#库（Repository）地址。例如：https://github.com/MeteoriteY/MeteoriteY.github.io</span></span><br><span class="line">  branch: [branch] <span class="comment">#分支名称。程序会尝试自动检测。例如:master</span></span><br><span class="line">  message: [message] <span class="comment">#自定义提交信息 (默认为 Site updated: &#123;&#123; now("YYYY-MM-DD HH:mm:ss") &#125;&#125;)。非必需项可省略。</span></span><br></pre></td></tr></table></figure>
+<h3 id="部署_Hexo">部署 Hexo</h3><p>安装 Hexo 完成后，需要先创建一个文件夹 <folder>，文件目录随意（最好是英文路径），再执行下列命令，Hexo 将会在指定文件夹中新建所需要的文件。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo init &lt;folder&gt;</span><br><span class="line">$ <span class="built_in">cd</span> &lt;folder&gt;</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure></folder></p>
+<p>新建完成后，指定文件夹的目录如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">├── _config.yml <span class="comment">#网站的 配置 信息，您可以在此配置大部分的参数。</span></span><br><span class="line">├── package.json <span class="comment">#应用程序的信息。EJS, Stylus 和 Markdown renderer 已默认安装，您可以自由移除。</span></span><br><span class="line">├── scaffolds <span class="comment">#模版文件夹。当您新建文章时，Hexo 会根据 scaffold 来建立文件。</span></span><br><span class="line">├── <span class="built_in">source</span> <span class="comment">#资源文件夹是存放用户资源的地方。</span></span><br><span class="line">|   ├── _drafts <span class="comment">#除 _posts 文件夹之外，开头命名为 _ (下划线) 的文件 / 文件夹和隐藏的文件将会被忽略。</span></span><br><span class="line">|   └── _posts</span><br><span class="line">└── themes <span class="comment">#主题 文件夹。Hexo 会根据主题来生成静态页面。</span></span><br></pre></td></tr></table></figure></p>
+<p>接下来需要为 Hexo 安装一些插件：<br><strong> 注意：下面的 hexo 命令需要在初始化 hexo 时的文件夹中执行，注意切换地址。</strong><br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save <span class="comment">#首页生成插件</span></span><br><span class="line">npm install hexo-generator-archive --save <span class="comment">#归档页生成插件</span></span><br><span class="line">npm install hexo-generator-category --save <span class="comment">#分类页生成插件</span></span><br><span class="line">npm install hexo-generator-tag --save <span class="comment">#标签页生成插件</span></span><br><span class="line">npm install hexo-server --save <span class="comment">#hexo 本地服务器插件</span></span><br><span class="line">npm install hexo-deployer-git --save <span class="comment">#git 部署插件</span></span><br><span class="line">npm install hexo-deployer-heroku --save <span class="comment">#heroku 部署插件（选装）</span></span><br><span class="line">npm install hexo-deployer-rsync --save <span class="comment">#rsync 部署插件（选装）</span></span><br><span class="line">npm install hexo-deployer-openshift --save <span class="comment">#openshift 部署插件（选装）</span></span><br><span class="line">npm install hexo-renderer-marked --save <span class="comment">#markdown 语法渲染插件</span></span><br><span class="line">npm install hexo-renderer-stylus --save <span class="comment">#Stylus 渲染插件</span></span><br><span class="line">npm install hexo-generator-feed --save <span class="comment">#feed 生成插件</span></span><br><span class="line">npm install hexo-generator-sitemap --save <span class="comment">#sitemap 生成插件</span></span><br><span class="line">npm install hexo-git-backup --save <span class="comment">#使用 github 备份博客</span></span><br><span class="line">npm install hexo-renderer-ejs --save <span class="comment">#ejs 渲染插件</span></span><br><span class="line">npm install hexo-tag-bilibili --save <span class="comment">#在文章中嵌入 bilibili 视频</span></span><br></pre></td></tr></table></figure></p>
+<p>更多详细信息可以访问 <a href="https://hexo.io/plugins/" target="_blank" rel="external">插件</a> 页面查看相关内容。</p>
+<p>执行下面命令成功后，即可在浏览器中打开 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 来查看效果。<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure></p>
+<h3 id="同步静态网页到_GitHub">同步静态网页到 GitHub</h3><ol>
+<li>需要一个 <a href="https://github.com/" target="_blank" rel="external">GitHub</a> 的账号。<ruby><rp>(</rp><span class="heimu" title=" 你知道的太多了 "> 全世界最大同性交友网站客官不来一发吗: D</span><rp>)</rp></ruby></li>
+<li>在主页找到创建仓库按钮 <code>New repository</code>，name 必须和自己的用户名一致，即 <code>meteoritey.github.io</code>。而这个地址也是将来的 Blog 地址。</li>
+<li>下载 <a href="https://github-windows.s3.amazonaws.com/GitHubSetup.exe" target="_blank" rel="external">GitHub Windows</a> 并双击安装。</li>
+<li>打开 GitHub Windows 后，在其右上角设置按钮中修改一个适合的 <code>Clone Path</code> 和习惯的 shell。</li>
+<li>运行桌面上的 <code>Git Shell</code>。</li>
+<li>使用 <code>cd</code> 命令切换到上面初始化后的 hexo 文件夹中。</li>
+<li><p>使用文本编辑器如 Atom，来编辑文件夹中的 <code>_config.yml</code>：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git</span><br><span class="line">  repo: &lt;repository url&gt; <span class="comment">#库（Repository）地址。例如：https://github.com/MeteoriteY/MeteoriteY.github.io</span></span><br><span class="line">  branch: [branch] <span class="comment">#分支名称。程序会尝试自动检测。例如: master</span></span><br><span class="line">  message: [message] <span class="comment">#自定义提交信息 (默认为 Site updated: &#123;&#123; now("YYYY-MM-DD HH:mm:ss")&#125;&#125;)。非必需项可省略。</span></span><br></pre></td></tr></table></figure>
 </li>
-<li><p>运行<code>hexo g</code>生成静态文件，这些文件都会保存在<code>Public</code>文件夹中。</p>
+<li><p>运行 <code>hexo g</code> 生成静态文件，这些文件都会保存在 <code>Public</code> 文件夹中。</p>
 </li>
-<li>使用命令<code>hexo s</code>后，在浏览器中登陆<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 查看新生成的网页。</li>
-<li>如果效果满意，可以使用命令<code>hexo d</code>一键部署到GitHub仓库。</li>
+<li>使用命令 <code>hexo s</code> 后，在浏览器中登陆 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 查看新生成的网页。</li>
+<li>如果效果满意，可以使用命令 <code>hexo d</code> 一键部署到 GitHub 仓库。</li>
 <li>稍等一会儿即可访问 <a href="http://meteoritey.github.io">http://meteoritey.github.io</a></li>
 </ol>
-<h2 id="HEXO的基本操作">HEXO的基本操作</h2><h3 id="创建一篇新文章">创建一篇新文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span> <span class="comment">#创建一篇新文章，引号内为标题</span></span><br></pre></td></tr></table></figure>
+<h2 id="HEXO_的基本操作">HEXO 的基本操作</h2><h3 id="创建一篇新文章">创建一篇新文章</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span> <span class="comment">#创建一篇新文章，引号内为标题</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
 <hr>
-<h3 id="用本地服务器跑hexo">用本地服务器跑hexo</h3><p>启用hexo服务器，可登录<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 查看博客最新修改效果。</p>
+<h3 id="用本地服务器跑_hexo">用本地服务器跑 hexo</h3><p>启用 hexo 服务器，可登录 <a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 查看博客最新修改效果。</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server  </span><br><span class="line">$ hexo s <span class="comment">#命令简写</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
 <h3 id="生成静态文件">生成静态文件</h3><p>在配置完博客或者发布文章后需要进行生成静态文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br><span class="line">$ hexo g <span class="comment">#命令简写，每次改动后都需要生成一次。</span></span><br></pre></td></tr></table></figure></p>
@@ -213,17 +242,17 @@
 <h3 id="部署静态文件到远程站点">部署静态文件到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br><span class="line">$ hexo d <span class="comment">#命令简写</span></span><br></pre></td></tr></table></figure>
 <p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
 <h3 id="一键生成静态文件并部署到远程站点">一键生成静态文件并部署到远程站点</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo g <span class="operator">-d</span></span><br></pre></td></tr></table></figure>
-<h3 id="清除public文件夹和数据库">清除public文件夹和数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean <span class="comment">#改动没效果时可先执行此命令，再生成静态文件。</span></span><br></pre></td></tr></table></figure>
+<h3 id="清除_public_文件夹和数据库">清除 public 文件夹和数据库</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo clean <span class="comment">#改动没效果时可先执行此命令，再生成静态文件。</span></span><br></pre></td></tr></table></figure>
 <h2 id="参考资料">参考资料</h2><ol>
-<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo官方文档</a></li>
-<li>luuman的<a href="http://luuman.github.io/2015/12/21/GitHub+Hexo/" target="_blank" rel="external">使用GitHub搭建Hexo博客</a></li>
-<li>wsgzao的<a href="http://wsgzao.github.io/post/hexo-guide/#注册设置GitHub" target="_blank" rel="external">使用GitHub和Hexo搭建免费静态Blog</a></li>
+<li><a href="https://hexo.io/zh-cn/docs/" target="_blank" rel="external">Hexo 官方文档</a></li>
+<li>luuman 的 <a href="http://luuman.github.io/2015/12/21/GitHub+Hexo/" target="_blank" rel="external">使用 GitHub 搭建 Hexo 博客</a></li>
+<li>wsgzao 的 <a href="http://wsgzao.github.io/post/hexo-guide/# 注册设置 GitHub" target="_blank" rel="external">使用 GitHub 和 Hexo 搭建免费静态 Blog</a></li>
 <li><a href="https://help.github.com/articles/what-is-my-disk-quota/" target="_blank" rel="external">仓库空间说明</a></li>
 <li><a href="https://hexo.io/themes/" target="_blank" rel="external">主题选择</a></li>
 </ol>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>本博客使用<a href="http://hexo.io/">Hexo</a>强力驱动! 这是我的第一篇博客。同时也是我对hexo使用的笔记。<br>选择hexo的原因主要是想用静态Blog来学习一下GitHub的使用，也能多学习一些css和html知识。<br>还有一个好处，就是可以熟悉Markdown的使用！<ruby><rp>(</rp><span class="heimu" title="你知道的太多了">以及提升逼格</span><rp>)</rp></ruby><br>感谢<a href="http://litten.github.io/">Litten</a>提供的<a href="https://github.com/litten/hexo-theme-yilia">yilia</a>主题，我挺喜欢这种简约风格的，现在所使用的主题略有修改。</p>]]>
+    <![CDATA[<p>本博客使用 <a href="http://hexo.io/">Hexo</a> 强力驱动! 这是我的第一篇博客。同时也是我对 hexo 使用的笔记。<br>选择 hexo 的原因主要是想用静态 Blog 来学习一下 GitHub 的使用，也能多学习一些 css 和 html 知识。<br>还有一个好处，就是可以熟悉 Markdown 的使用！<ruby><rp>(</rp><span class="heimu"title=" 你知道的太多了 "> 以及提升逼格 </span><rp>)</rp></ruby><br>感谢 <a href="http://litten.github.io/">Litten</a> 提供的 <a href="https://github.com/litten/hexo-theme-yilia">yilia</a> 主题，我挺喜欢这种简约风格的，现在所使用的主题略有修改。</p>]]>
     
     </summary>
     
