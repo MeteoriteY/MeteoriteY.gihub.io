@@ -6,17 +6,17 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <title>Windows 资源管理器不断重启的解决方案 | APERTURE PSEUDOSCIENCE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在我时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。">
+  <meta name="description" content="不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在咱时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Windows 资源管理器不断重启的解决方案">
 <meta property="og:url" content="http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/index.html">
 <meta property="og:site_name" content="APERTURE PSEUDOSCIENCE">
-<meta property="og:description" content="不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在我时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。">
+<meta property="og:description" content="不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在咱时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。">
 <meta property="og:image" content="http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/2016-04-18-01.png">
-<meta property="og:updated_time" content="2016-04-19T12:36:47.912Z">
+<meta property="og:updated_time" content="2016-04-19T13:02:16.171Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Windows 资源管理器不断重启的解决方案">
-<meta name="twitter:description" content="不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在我时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。">
+<meta name="twitter:description" content="不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在咱时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。">
   
     <link rel="alternative" href="/atom.xml" title="APERTURE PSEUDOSCIENCE" type="application/atom+xml">
   
@@ -238,10 +238,10 @@
     <div class="article-entry" itemprop="articleBody">
       
           
-        <p>不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在我时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。</p>
+        <p>不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在咱时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。</p>
 <a id="more"></a>
 <h2 id="准备工作">准备工作</h2><p>首先需要搞清楚到底是什么问题导致 Windows 资源管理器不断重启，俗话说巧妇难为无米之炊，这里推荐一个好用的工具 <a href="http://www.nirsoft.net/utils/shexview.html" target="_blank" rel="external">ShellExView</a> （英语不好的朋友可以在网页上找到简体中文语言附件，和执行文件放在同一个文件夹即可）。</p>
-<p>这个软件是免安装使用的，下载即可使用。由于此时资源管理器在不断地重启，通过 explorer 找到这个刚下载的压缩包并允许这个程序这个方法不太可行。这时可以让电脑重启加载安全模式来使用 ShellExView：win+R → 键入「msconfig」 → 选项卡中找到「引导」 → 勾选「安全引导」 → 确定并重启电脑。虽然是这么说，反正我是在资源管理器重启间隙迅速打开压缩包的￣▽￣。</p>
+<p>这个软件是免安装使用的，下载即可使用。由于此时资源管理器在不断地重启，通过 explorer 找到这个刚下载的压缩包并允许这个程序这个方法不太可行。这时可以让电脑重启加载安全模式来使用 ShellExView：win+R → 键入「msconfig」 → 选项卡中找到「引导」 → 勾选「安全引导」 → 确定并重启电脑。虽然是这么说，反正咱是在资源管理器重启间隙迅速打开压缩包的￣▽￣。</p>
 <h2 id="修复问题">修复问题</h2><p>打开 ShellExView 后的界面如下：</p>
 <img src="/2016/04/18/Windows资源管理器不断重启的解决方案/2016-04-18-01.png" alt="ShellExView" title="ShellExView">
 <p>现在顶部项目栏中找到「文件创建时间」一栏，让下面的项目以创建时间为序，查找最新的 shell 改动。图中已按创建时间排序，且选中的两个项目是在问题出现的当天创建的，很容易知道这两个文件就是这次问题的罪魁祸首。</p>
@@ -263,7 +263,7 @@
         <p><span>本文标题:</span><a href="/2016/04/18/Windows资源管理器不断重启的解决方案/">Windows 资源管理器不断重启的解决方案</a></p>
         <p><span>文章作者:</span><a href="/" title="请访问 MeteoriteY 博客">MeteoriteY</a></p>
         <p><span>发布时间:</span>2016/04/18 - 23:58:31</p>
-        <p><span>最后更新:</span>2016/04/19 - 20:36:47</p>
+        <p><span>最后更新:</span>2016/04/19 - 21:02:16</p>
         <p>
             <span>原始链接:</span><a class="post-url" href="/2016/04/18/Windows资源管理器不断重启的解决方案/" title="Windows 资源管理器不断重启的解决方案">http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/</a>
             <span class="copy-path" data-clipboard-text="原文: http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/　　作者: MeteoriteY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
