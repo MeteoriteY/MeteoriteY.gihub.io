@@ -4,7 +4,7 @@
   <subtitle><![CDATA[LABORATORY]]></subtitle>
   <link href="/atom.xml" rel="self"/>
   <link href="http://meteoritey.github.io/"/>
-  <updated>2016-04-19T12:29:07.677Z</updated>
+  <updated>2016-04-19T12:36:47.912Z</updated>
   <id>http://meteoritey.github.io/</id>
   
   <author>
@@ -19,11 +19,13 @@
     <link href="http://meteoritey.github.io/2016/04/18/Windows%E8%B5%84%E6%BA%90%E7%AE%A1%E7%90%86%E5%99%A8%E4%B8%8D%E6%96%AD%E9%87%8D%E5%90%AF%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/"/>
     <id>http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/</id>
     <published>2016-04-18T15:58:31.000Z</published>
-    <updated>2016-04-19T12:29:07.677Z</updated>
+    <updated>2016-04-19T12:36:47.912Z</updated>
     <content type="html"><![CDATA[<p>不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在我时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。</p>
-<h2 id="<!-_more_->"><a id="more"></a></h2><h2 id="准备工作">准备工作</h2><p>首先需要搞清楚到底是什么问题导致 Windows 资源管理器不断重启，俗话说巧妇难为无米之炊，这里推荐一个好用的工具 <a href="http://www.nirsoft.net/utils/shexview.html" target="_blank" rel="external">ShellExView</a> （英语不好的朋友可以在网页上找到简体中文语言附件，和执行文件放在同一个文件夹即可）。</p>
+<a id="more"></a>
+<h2 id="准备工作">准备工作</h2><p>首先需要搞清楚到底是什么问题导致 Windows 资源管理器不断重启，俗话说巧妇难为无米之炊，这里推荐一个好用的工具 <a href="http://www.nirsoft.net/utils/shexview.html" target="_blank" rel="external">ShellExView</a> （英语不好的朋友可以在网页上找到简体中文语言附件，和执行文件放在同一个文件夹即可）。</p>
 <p>这个软件是免安装使用的，下载即可使用。由于此时资源管理器在不断地重启，通过 explorer 找到这个刚下载的压缩包并允许这个程序这个方法不太可行。这时可以让电脑重启加载安全模式来使用 ShellExView：win+R → 键入「msconfig」 → 选项卡中找到「引导」 → 勾选「安全引导」 → 确定并重启电脑。虽然是这么说，反正我是在资源管理器重启间隙迅速打开压缩包的￣▽￣。</p>
-<h2 id="修复问题">修复问题</h2><p>打开 ShellExView 后的界面如下：<br></p>
+<h2 id="修复问题">修复问题</h2><p>打开 ShellExView 后的界面如下：</p>
+
 <p>现在顶部项目栏中找到「文件创建时间」一栏，让下面的项目以创建时间为序，查找最新的 shell 改动。图中已按创建时间排序，且选中的两个项目是在问题出现的当天创建的，很容易知道这两个文件就是这次问题的罪魁祸首。</p>
 <p>可以在这两项文件的属性里面找到这两个文件的路径位置等相关信息：</p>
 <hr>
@@ -34,10 +36,11 @@
 <p>正是这两个文件导致了 Windows 资源管理器不断重启，禁用这两项文件并在源文件路径中删除之后正常重启就能恢复正常了。</p>
 ]]></content>
     <summary type="html">
-    <![CDATA[<p>不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在我时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。</p>
-<h2 id="<!-_more_->">]]>
+    <![CDATA[<p>不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在我时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。</p>]]>
     
     </summary>
+    
+      <category term="解决办法" scheme="http://meteoritey.github.io/tags/%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
     
       <category term="软件笔记" scheme="http://meteoritey.github.io/categories/%E8%BD%AF%E4%BB%B6%E7%AC%94%E8%AE%B0/"/>
     
@@ -99,7 +102,7 @@
     <link href="http://meteoritey.github.io/2016/02/07/%E8%BF%91%E6%9C%9F%E4%BD%BF%E7%94%A8bilibili%E7%9A%84%E9%97%AE%E9%A2%98/"/>
     <id>http://meteoritey.github.io/2016/02/07/近期使用bilibili的问题/</id>
     <published>2016-02-06T17:56:05.000Z</published>
-    <updated>2016-02-06T18:24:43.569Z</updated>
+    <updated>2016-04-19T12:37:49.752Z</updated>
     <content type="html"><![CDATA[<h2 id="摘要">摘要</h2><p>最近在上bilibili的时候发现了两个问题：</p>
 <ol>
 <li>不论什么视频加载速度都很慢，换过ip后问题依旧。</li>
@@ -138,7 +141,9 @@
     
     </summary>
     
-      <category term="软件笔记" scheme="http://meteoritey.github.io/tags/%E8%BD%AF%E4%BB%B6%E7%AC%94%E8%AE%B0/"/>
+      <category term="解决办法" scheme="http://meteoritey.github.io/tags/%E8%A7%A3%E5%86%B3%E5%8A%9E%E6%B3%95/"/>
+    
+      <category term="软件笔记" scheme="http://meteoritey.github.io/categories/%E8%BD%AF%E4%BB%B6%E7%AC%94%E8%AE%B0/"/>
     
   </entry>
   
