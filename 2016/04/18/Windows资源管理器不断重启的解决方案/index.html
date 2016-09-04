@@ -1,451 +1,524 @@
 <!DOCTYPE html>
 <html>
+
 <head>
   <meta charset="utf-8">
-  
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" >
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>Windows 资源管理器不断重启的解决方案 | APERTURE PSEUDOSCIENCE</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
   <meta name="description" content="不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在咱时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。">
-<meta property="og:type" content="article">
-<meta property="og:title" content="Windows 资源管理器不断重启的解决方案">
-<meta property="og:url" content="http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/index.html">
-<meta property="og:site_name" content="APERTURE PSEUDOSCIENCE">
-<meta property="og:description" content="不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在咱时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。">
-<meta property="og:image" content="http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/2016-04-18-01.png">
-<meta property="og:updated_time" content="2016-04-19T13:02:16.171Z">
-<meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Windows 资源管理器不断重启的解决方案">
-<meta name="twitter:description" content="不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在咱时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。">
-  
-    <link rel="alternative" href="/atom.xml" title="APERTURE PSEUDOSCIENCE" type="application/atom+xml">
-  
-  
-    <link rel="icon" href="/img/Aperture_Science.png">
-  
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Windows 资源管理器不断重启的解决方案">
+  <meta property="og:url" content="http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/index.html">
+  <meta property="og:site_name" content="APERTURE PSEUDOSCIENCE">
+  <meta property="og:description" content="不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在咱时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。">
+  <meta property="og:image" content="http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/2016-04-18-01.png">
+  <meta property="og:updated_time" content="2016-04-19T13:02:16.171Z">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Windows 资源管理器不断重启的解决方案">
+  <meta name="twitter:description" content="不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在咱时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。">
+
+  <link rel="alternative" href="/atom.xml" title="APERTURE PSEUDOSCIENCE" type="application/atom+xml">
+
+  <link rel="icon" href="/img/Aperture_Science.png">
+
   <link rel="stylesheet" href="/css/style.css" type="text/css">
 </head>
 
 <body>
   <div id="container">
     <div class="left-col">
-    <div class="overlay"></div>
-<div class="intrude-less">
-	<header id="header" class="inner">
-		<a href="/" class="profilepic">
-			
-			<img lazy-src="/img/head.png" class="js-avatar">
-			
-		</a>
+      <div class="overlay"></div>
+      <div class="intrude-less">
+        <header id="header" class="inner">
+          <a href="/" class="profilepic">
 
-		<hgroup>
-		  <h1 class="header-author"><a href="/">MeteoriteY</a></h1>
-		</hgroup>
+            <img lazy-src="/img/head.png" class="js-avatar">
 
-		
-		<p class="header-subtitle">LABORATORY</p>
-		
+          </a>
 
-		
-			<div class="switch-btn">
-				<div class="icon">
-					<div class="icon-ctn">
-						<div class="icon-wrap icon-house" data-idx="0">
-							<div class="birdhouse"></div>
-							<div class="birdhouse_holes"></div>
-						</div>
-						<div class="icon-wrap icon-ribbon hide" data-idx="1">
-							<div class="ribbon"></div>
-						</div>
-						
-						<div class="icon-wrap icon-link hide" data-idx="2">
-							<div class="loopback_l"></div>
-							<div class="loopback_r"></div>
-						</div>
-						
-						
-						<div class="icon-wrap icon-me hide" data-idx="3">
-							<div class="user"></div>
-							<div class="shoulder"></div>
-						</div>
-						
-					</div>
-					
-				</div>
-				<div class="tips-box hide">
-					<div class="tips-arrow"></div>
-					<ul class="tips-inner">
-						<li>菜单</li>
-						<li>標籤</li>
-						
-						<li>友情链接</li>
-						
-						
-						<li>關於</li>
-						
-					</ul>
-				</div>
-			</div>
-		
+          <hgroup>
+            <h1 class="header-author">
+              <a href="/">MeteoriteY</a>
+            </h1>
+          </hgroup>
 
-		<div class="switch-area">
-			<div class="switch-wrap">
-				<section class="switch-part switch-part1">
-					<nav class="header-menu">
-						<ul>
-						
-							<li><a href="/archives">所有文章</a></li>
-				        
-							<li><a href="/categories/软件笔记">软件笔记</a></li>
-				        
-							<li><a href="/categories/谈笑风生">谈笑风生</a></li>
-				        
-						</ul>
-					</nav>
-					<nav class="header-nav">
-						<div class="social">
-							
-								<a class="github" target="_blank" href="https://github.com/MeteoriteY" title="github">github</a>
-					        
-								<a class="weibo" target="_blank" href="http://weibo.com/325864479" title="weibo">weibo</a>
-					        
-								<a class="twitter" target="_blank" href="https://twitter.com/Pithoi" title="twitter">twitter</a>
-					        
-								<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-					        
-						</div>
-					</nav>
-				</section>
-				
-				
-				<section class="switch-part switch-part2">
-					<div class="widget tagcloud" id="js-tagcloud">
-						<a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a> <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a> <a href="/tags/博客/" style="font-size: 20px;">博客</a> <a href="/tags/建站/" style="font-size: 10px;">建站</a> <a href="/tags/解决办法/" style="font-size: 20px;">解决办法</a> <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
-					</div>
-				</section>
-				
-				
-				
-				<section class="switch-part switch-part3">
-					<div id="js-friends">
-					
-			          <a target="_blank" class="main-nav-link switch-friends-link" href="https://droid4.us">Droid4us</a>
-			        
-			        </div>
-				</section>
-				
+          <p class="header-subtitle">LABORATORY</p>
 
-				
-				
-				<section class="switch-part switch-part4">
-				
-					<div id="js-aboutme">THE CAKE IS A LIE.</div>
-				</section>
-				
-			</div>
-		</div>
-	</header>				
-</div>
+          <div class="switch-btn">
+            <div class="icon">
+              <div class="icon-ctn">
+                <div class="icon-wrap icon-house" data-idx="0">
+                  <div class="birdhouse"></div>
+                  <div class="birdhouse_holes"></div>
+                </div>
+                <div class="icon-wrap icon-ribbon hide" data-idx="1">
+                  <div class="ribbon"></div>
+                </div>
+
+                <div class="icon-wrap icon-link hide" data-idx="2">
+                  <div class="loopback_l"></div>
+                  <div class="loopback_r"></div>
+                </div>
+
+                <div class="icon-wrap icon-me hide" data-idx="3">
+                  <div class="user"></div>
+                  <div class="shoulder"></div>
+                </div>
+
+              </div>
+
+            </div>
+            <div class="tips-box hide">
+              <div class="tips-arrow"></div>
+              <ul class="tips-inner">
+                <li>菜单</li>
+                <li>標籤</li>
+
+                <li>友情链接</li>
+
+                <li>關於</li>
+
+              </ul>
+            </div>
+          </div>
+
+          <div class="switch-area">
+            <div class="switch-wrap">
+              <section class="switch-part switch-part1">
+                <nav class="header-menu">
+                  <ul>
+
+                    <li>
+                      <a href="/archives">所有文章</a>
+                    </li>
+
+                    <li>
+                      <a href="/categories/软件笔记">软件笔记</a>
+                    </li>
+
+                    <li>
+                      <a href="/categories/谈笑风生">谈笑风生</a>
+                    </li>
+
+                  </ul>
+                </nav>
+                <nav class="header-nav">
+                  <div class="social">
+
+                    <a class="github" target="_blank" href="https://github.com/MeteoriteY" title="github">github</a>
+
+                    <a class="weibo" target="_blank" href="http://weibo.com/325864479" title="weibo">weibo</a>
+
+                    <a class="twitter" target="_blank" href="https://twitter.com/Pithoi" title="twitter">twitter</a>
+
+                    <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+
+                  </div>
+                </nav>
+              </section>
+
+              <section class="switch-part switch-part2">
+                <div class="widget tagcloud" id="js-tagcloud">
+                  <a href="/tags/GitHub/" style="font-size: 10px;">GitHub</a>
+                  <a href="/tags/Hexo/" style="font-size: 20px;">Hexo</a>
+                  <a href="/tags/博客/" style="font-size: 20px;">博客</a>
+                  <a href="/tags/建站/" style="font-size: 10px;">建站</a>
+                  <a href="/tags/解决办法/" style="font-size: 20px;">解决办法</a>
+                  <a href="/tags/随笔/" style="font-size: 20px;">随笔</a>
+                </div>
+              </section>
+
+              <section class="switch-part switch-part3">
+                <div id="js-friends">
+
+                  <a target="_blank" class="main-nav-link switch-friends-link" href="https://droid4.us">Droid4us</a>
+
+                </div>
+              </section>
+
+              <section class="switch-part switch-part4">
+
+                <div id="js-aboutme">THE CAKE IS A LIE.</div>
+              </section>
+
+            </div>
+          </div>
+        </header>
+      </div>
 
     </div>
     <div class="mid-col">
       <nav id="mobile-nav">
-  	<div class="overlay">
-  		<div class="slider-trigger"></div>
-  		<h1 class="header-author js-mobile-header hide">MeteoriteY</h1>
-  	</div>
-	<div class="intrude-less">
-		<header id="header" class="inner">
-			<div class="profilepic">
-			
-				<img lazy-src="/img/head.png" class="js-avatar">
-			
-			</div>
-			<hgroup>
-			  <h1 class="header-author">MeteoriteY</h1>
-			</hgroup>
-			
-			<p class="header-subtitle">LABORATORY</p>
-			
-			<nav class="header-menu">
-				<ul>
-				
-					<li><a href="/archives">所有文章</a></li>
-		        
-					<li><a href="/categories/软件笔记">软件笔记</a></li>
-		        
-					<li><a href="/categories/谈笑风生">谈笑风生</a></li>
-		        
-		        <div class="clearfix"></div>
-				</ul>
-			</nav>
-			<nav class="header-nav">
-				<div class="social">
-					
-						<a class="github" target="_blank" href="https://github.com/MeteoriteY" title="github">github</a>
-			        
-						<a class="weibo" target="_blank" href="http://weibo.com/325864479" title="weibo">weibo</a>
-			        
-						<a class="twitter" target="_blank" href="https://twitter.com/Pithoi" title="twitter">twitter</a>
-			        
-						<a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
-			        
-				</div>
-			</nav>
-		</header>				
-	</div>
-</nav>
+        <div class="overlay">
+          <div class="slider-trigger"></div>
+          <h1 class="header-author js-mobile-header hide">MeteoriteY</h1>
+        </div>
+        <div class="intrude-less">
+          <header id="header" class="inner">
+            <div class="profilepic">
 
-      <div class="body-wrap"><article id="post-Windows资源管理器不断重启的解决方案" class="article article-type-post" itemscope itemprop="blogPost">
-  
-    <div class="article-meta">
-      <a href="/2016/04/18/Windows资源管理器不断重启的解决方案/" class="article-date">
-  	<time datetime="2016-04-18T15:58:31.000Z" itemprop="datePublished">2016-04-18</time>
-</a>
-    </div>
-  
-  <div class="article-inner">
-    
-      <input type="hidden" class="isFancy" />
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 class="article-title" itemprop="name">
-      Windows 资源管理器不断重启的解决方案
-    </h1>
-  
+              <img lazy-src="/img/head.png" class="js-avatar">
 
-      </header>
-      
-      <div class="article-info article-info-post">
-        
-	<div class="article-tag tagcloud">
-		<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/解决办法/">解决办法</a></li></ul>
-	</div>
+            </div>
+            <hgroup>
+              <h1 class="header-author">MeteoriteY</h1>
+            </hgroup>
 
-        
-	<div class="article-category tagcloud">
-	<a class="article-category-link" href="/categories/软件笔记/">软件笔记</a>
-	</div>
+            <p class="header-subtitle">LABORATORY</p>
 
+            <nav class="header-menu">
+              <ul>
 
-        <div class="clearfix"></div>
-      </div>
-      
-    
-    <div class="article-entry" itemprop="articleBody">
-      
+                <li>
+                  <a href="/archives">所有文章</a>
+                </li>
+
+                <li>
+                  <a href="/categories/软件笔记">软件笔记</a>
+                </li>
+
+                <li>
+                  <a href="/categories/谈笑风生">谈笑风生</a>
+                </li>
+
+                <div class="clearfix"></div>
+              </ul>
+            </nav>
+            <nav class="header-nav">
+              <div class="social">
+
+                <a class="github" target="_blank" href="https://github.com/MeteoriteY" title="github">github</a>
+
+                <a class="weibo" target="_blank" href="http://weibo.com/325864479" title="weibo">weibo</a>
+
+                <a class="twitter" target="_blank" href="https://twitter.com/Pithoi" title="twitter">twitter</a>
+
+                <a class="rss" target="_blank" href="/atom.xml" title="rss">rss</a>
+
+              </div>
+            </nav>
+          </header>
+        </div>
+      </nav>
+
+      <div class="body-wrap">
+        <article id="post-Windows资源管理器不断重启的解决方案" class="article article-type-post"
+                                                                                        itemscope itemprop="blogPost">
+
+          <div class="article-meta">
+            <a href="/2016/04/18/Windows资源管理器不断重启的解决方案/" class="article-date">
+              <time datetime="2016-04-18T15:58:31.000Z" itemprop="datePublished">2016-04-18</time>
+            </a>
+
+          </div>
+
+          <div class="article-inner">
+
+            <input type="hidden" class="isFancy" />
+
+            <header class="article-header">
+              <h1 class="article-title" itemprop="name">
+                Windows 资源管理器不断重启的解决方案
+              </h1>
+
+            </header>
+
+            <div class="article-info article-info-post">
+              <div class="article-tag tagcloud">
+                <ul class="article-tag-list">
+                  <li class="article-tag-list-item">
+                    <a class="article-tag-list-link" href="/tags/解决办法/">解决办法</a>
+                  </li>
+                </ul>
+              </div>
+
+              <div class="article-category tagcloud">
+                <a class="article-category-link" href="/categories/软件笔记/">软件笔记</a>
+              </div>
+
+              <div class="clearfix"></div>
+            </div>
+
+            <div class="article-entry" itemprop="articleBody">
+
+              <p>不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在咱时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。</p>
+              <a id="more"></a>
+              <h2 id="准备工作">
+                <a href="#准备工作" class="headerlink" title="准备工作"></a>准备工作</h2>
+              <p>首先需要搞清楚到底是什么问题导致 Windows 资源管理器不断重启，俗话说巧妇难为无米之炊，这里推荐一个好用的工具
+                <a href="http://www.nirsoft.net/utils/shexview.html" target="_blank" rel="external">ShellExView</a> （英语不好的朋友可以在网页上找到简体中文语言附件，和执行文件放在同一个文件夹即可）。</p>
+              <p>这个软件是免安装使用的，下载即可使用。由于此时资源管理器在不断地重启，通过 explorer 找到这个刚下载的压缩包并允许这个程序这个方法不太可行。这时可以让电脑重启加载安全模式来使用
+                ShellExView：win+R → 键入「msconfig」 → 选项卡中找到「引导」 → 勾选「安全引导」 → 确定并重启电脑。虽然是这么说，反正咱是在资源管理器重启间隙迅速打开压缩包的￣▽￣。</p>
+              <h2 id="修复问题">
+                <a href="#修复问题" class="headerlink" title="修复问题"></a>修复问题</h2>
+              <p>打开 ShellExView 后的界面如下：</p>
+              <img src="/2016/04/18/Windows资源管理器不断重启的解决方案/2016-04-18-01.png" alt="ShellExView"
+                                                                                              title="ShellExView">
+              <p>现在顶部项目栏中找到「文件创建时间」一栏，让下面的项目以创建时间为序，查找最新的 shell 改动。图中已按创建时间排序，且选中的两个项目是在问题出现的当天创建的，很容易知道这两个文件就是这次问题的罪魁祸首。</p>
+              <p>可以在这两项文件的属性里面找到这两个文件的路径位置等相关信息：</p>
+              <hr>
+              <p>扩展名称 :
+                <br>已禁用 : 是
+                <br>类型 : 复制挂钩处理
+                <br>描述 :
+                <br>版本 :
+                <br>产品名称 :
+                <br>公司 :
+                <br>我的电脑 : 否
+                <br>桌面 : 否
+                <br>控制面板 : 否
+                <br>我的网络位置 : 否
+                <br>整个网络 : 否
+                <br>远程计算机 : 否
+                <br>文件名 : C:\Users\$username\AppData\Local\Microsoft\Windows\Explorer\Memory\Clean64.dll
+                <br>CLSID : {2EC77CE8-4DD8-2CF9-102A-DF90C9D8E26A}
+                <br>文件创建时间 : 不适用
+                <br>CLSID 修改时间 : 2016/4/7 星期四 16:02:33
+                <br>微软 : 否
+                <br>文件扩展 : Directory
+                <br>文件属性 :
+                <br>文件大小 : 0
+                <br>.NET 扩展 : 否
+                <br>数字签名 :
+                <br>缺少文件 : 是 </p>
+              <hr>
+              <p>扩展名称 :
+                <br>已禁用 : 是
+                <br>类型 : 图标覆盖处理
+                <br>描述 :
+                <br>版本 :
+                <br>产品名称 :
+                <br>公司 :
+                <br>我的电脑 : 否
+                <br>桌面 : 否
+                <br>控制面板 : 否
+                <br>我的网络位置 : 否
+                <br>整个网络 : 否
+                <br>远程计算机 : 否
+                <br>文件名 : C:\Users\$username\AppData\Local\Microsoft\Windows\Explorer\Memory\Clean64.dll
+                <br>CLSID : {1FC77CE8-4DD8-2CF9-102A-DF90C9D8E26A}
+                <br>文件创建时间 : 不适用
+                <br>CLSID 修改时间 : 2016/4/7 星期四 16:02:33
+                <br>微软 : 否
+                <br>文件扩展 :
+                <br>文件属性 :
+                <br>文件大小 : 0
+                <br>.NET 扩展 : 否
+                <br>数字签名 :
+                <br>缺少文件 : 是 </p>
+              <hr>
+              <p>正是这两个文件导致了 Windows 资源管理器不断重启，禁用这两项文件并在源文件路径中删除之后正常重启就能恢复正常了。</p>
+
+            </div>
+
+          </div>
+
+          <div class="copyright">
+            <p>
+              <span>本文标题:</span>
+              <a href="/2016/04/18/Windows资源管理器不断重启的解决方案/">Windows 资源管理器不断重启的解决方案</a>
+            </p>
+            <p>
+              <span>文章作者:</span>
+              <a href="/" title="请访问 MeteoriteY 博客">MeteoriteY</a>
+            </p>
+            <p>
+              <span>发布时间:</span>2016/04/18 - 23:58:31</p>
+            <p>
+              <span>最后更新:</span>2016/04/19 - 21:02:16</p>
+            <p>
+              <span>原始链接:</span>
+              <a class="post-url" href="/2016/04/18/Windows资源管理器不断重启的解决方案/" title="Windows 资源管理器不断重启的解决方案">http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/</a>
+              <span class="copy-path" data-clipboard-text="原文: http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/　　作者: MeteoriteY"
+                                                                                              title="点击复制文章链接">
+                <i class="fa fa-clipboard"></i>
+              </span>
+              <script src="/js/clipboard.min.js"></script>
+              <script>
+                var clipboard = new Clipboard('.copy-path');
+
+              </script>
+            </p>
+            <p>
+              <span>许可协议:</span>
+              <i class="fa fa-creative-commons"></i>
+              <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/">
+                <img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png"
+                />
+              </a>
+              <a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="中国大陆 (CC BY-NC-SA 4.0 CN)">
+                知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
+            </p>
+          </div>
+
+          <nav id="article-nav">
+
+            <a href="/2016/07/03/大学毕业随笔/" id="article-nav-newer" class="article-nav-link-wrap">
+              <strong class="article-nav-caption">
+                <</strong>
+                  <div class="article-nav-title">
+
+                    大学毕业了
+
+                  </div>
+            </a>
+
+            <a href="/2016/03/28/一点儿随笔/" id="article-nav-older" class="article-nav-link-wrap">
+              <div class="article-nav-title">一点儿随笔</div>
+              <strong class="article-nav-caption">></strong>
+            </a>
+
+          </nav>
+
+        </article>
+
+        <div id="toc" class="toc-article">
+          <strong class="toc-title">文章目录</strong>
+          <ol class="toc">
+            <li class="toc-item toc-level-2">
+              <a class="toc-link" href="#准备工作">
+                <span class="toc-number">1.</span>
+                <span class="toc-text">
+                  准备工作</span>
+              </a>
+            </li>
+            <li class="toc-item toc-level-2">
+              <a class="toc-link" href="#修复问题">
+                <span class="toc-number">2.</span>
+                <span class="toc-text">
+                  修复问题</span>
+              </a>
+            </li>
+          </ol>
+        </div>
+        <style>
+          .left-col .switch-btn {
+            display: block;
+          }
           
-        <p>不久之前，咱电脑上的 Windows 资源管理器出了点儿问题：一开机就不断自重启 Windows 资源管理器，并且导致 cpu 占用率和硬盘占用率居高不下，影响正常使用。特别在咱时隔三日突发奇想地打算弄弄毕设的时候，这个毛病的出现简直是一个学（wan）习（mei）机（jie）会（kou）。</p>
-<a id="more"></a>
-<h2 id="准备工作">准备工作</h2><p>首先需要搞清楚到底是什么问题导致 Windows 资源管理器不断重启，俗话说巧妇难为无米之炊，这里推荐一个好用的工具 <a href="http://www.nirsoft.net/utils/shexview.html" target="_blank" rel="external">ShellExView</a> （英语不好的朋友可以在网页上找到简体中文语言附件，和执行文件放在同一个文件夹即可）。</p>
-<p>这个软件是免安装使用的，下载即可使用。由于此时资源管理器在不断地重启，通过 explorer 找到这个刚下载的压缩包并允许这个程序这个方法不太可行。这时可以让电脑重启加载安全模式来使用 ShellExView：win+R → 键入「msconfig」 → 选项卡中找到「引导」 → 勾选「安全引导」 → 确定并重启电脑。虽然是这么说，反正咱是在资源管理器重启间隙迅速打开压缩包的￣▽￣。</p>
-<h2 id="修复问题">修复问题</h2><p>打开 ShellExView 后的界面如下：</p>
-<img src="/2016/04/18/Windows资源管理器不断重启的解决方案/2016-04-18-01.png" alt="ShellExView" title="ShellExView">
-<p>现在顶部项目栏中找到「文件创建时间」一栏，让下面的项目以创建时间为序，查找最新的 shell 改动。图中已按创建时间排序，且选中的两个项目是在问题出现的当天创建的，很容易知道这两个文件就是这次问题的罪魁祸首。</p>
-<p>可以在这两项文件的属性里面找到这两个文件的路径位置等相关信息：</p>
-<hr>
-<p>扩展名称          :<br>已禁用            : 是<br>类型              : 复制挂钩处理<br>描述              :<br>版本              :<br>产品名称          :<br>公司              :<br>我的电脑          : 否<br>桌面              : 否<br>控制面板          : 否<br>我的网络位置      : 否<br>整个网络          : 否<br>远程计算机        : 否<br>文件名            :    C:\Users\$username\AppData\Local\Microsoft\Windows\Explorer\Memory\Clean64.dll<br>CLSID             : {2EC77CE8-4DD8-2CF9-102A-DF90C9D8E26A}<br>文件创建时间      : 不适用<br>CLSID 修改时间    : 2016/4/7 星期四 16:02:33<br>微软              : 否<br>文件扩展          : Directory<br>文件属性          :<br>文件大小          : 0<br>.NET 扩展         : 否<br>数字签名          :<br>缺少文件          : 是   </p>
-<hr>
-<p>扩展名称          :<br>已禁用            : 是<br>类型              : 图标覆盖处理<br>描述              :<br>版本              :<br>产品名称          :<br>公司              :<br>我的电脑          : 否<br>桌面              : 否<br>控制面板          : 否<br>我的网络位置      : 否<br>整个网络          : 否<br>远程计算机        : 否<br>文件名            : C:\Users\$username\AppData\Local\Microsoft\Windows\Explorer\Memory\Clean64.dll<br>CLSID             : {1FC77CE8-4DD8-2CF9-102A-DF90C9D8E26A}<br>文件创建时间      : 不适用<br>CLSID 修改时间    : 2016/4/7 星期四 16:02:33<br>微软              : 否<br>文件扩展          :<br>文件属性          :<br>文件大小          : 0<br>.NET 扩展         : 否<br>数字签名          :<br>缺少文件          : 是   </p>
-<hr>
-<p>正是这两个文件导致了 Windows 资源管理器不断重启，禁用这两项文件并在源文件路径中删除之后正常重启就能恢复正常了。</p>
+          .left-col .switch-area {
+            display: block;
+          }
 
-      
-    </div>
-    
-  </div>
-  
-    
-    <div class="copyright">
-        <p><span>本文标题:</span><a href="/2016/04/18/Windows资源管理器不断重启的解决方案/">Windows 资源管理器不断重启的解决方案</a></p>
-        <p><span>文章作者:</span><a href="/" title="请访问 MeteoriteY 博客">MeteoriteY</a></p>
-        <p><span>发布时间:</span>2016/04/18 - 23:58:31</p>
-        <p><span>最后更新:</span>2016/04/19 - 21:02:16</p>
-        <p>
-            <span>原始链接:</span><a class="post-url" href="/2016/04/18/Windows资源管理器不断重启的解决方案/" title="Windows 资源管理器不断重启的解决方案">http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/</a>
-            <span class="copy-path" data-clipboard-text="原文: http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/　　作者: MeteoriteY" title="点击复制文章链接"><i class="fa fa-clipboard"></i></span>
-            <script src="/js/clipboard.min.js"></script>
-            <script> var clipboard = new Clipboard('.copy-path'); </script>
-        </p>
-        <p>
-            <span>许可协议:</span><i class="fa fa-creative-commons"></i><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/"><img alt="知识共享许可协议" style="border-width:0" src="https://i.creativecommons.org/l/by-nc-sa/4.0/80x15.png" /></a><a rel="license" href="http://creativecommons.org/licenses/by-nc-sa/4.0/" title="中国大陆 (CC BY-NC-SA 4.0 CN)"> 知识共享署名-非商业性使用-相同方式共享 4.0 国际许可协议</a>
-        </p>
-    </div>
+        </style>
+
+        <input type="button" id="tocButton" value="隐藏目录" title="点击按钮隐藏或者显示文章目录">
+
+        <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+        <script>
+          var toc_button = document.getElementById("tocButton");
+          var toc_div = document.getElementById("toc");
+          toc_button.onclick = function() {
+            if (toc_div.style.display == "none") {
+              toc_div.style.display = "block";
+              toc_button.value = "隐藏目录";
+              document.getElementById("switch-btn").style.display = "none";
+              document.getElementById("switch-area").style.display = "none";
+            } else {
+              toc_div.style.display = "none";
+              toc_button.value = "显示目录";
+              document.getElementById("switch-btn").style.display = "block";
+              document.getElementById("switch-area").style.display = "block";
+            }
+          }
+          if ($(".toc").length < 1) {
+            $("#toc").css("display", "none");
+            $("#tocButton").css("display", "none");
+            $(".switch-btn").css("display", "block");
+            $(".switch-area").css("display", "block");
+          }
+
+        </script>
+
+        <div class="share_addthis">
+          <div class="addthis_sharing_toolbox">
+
+          </div>
+          <!-- Go to www.addthis.com/dashboard to customize your tools -->
+          <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56890545bb1303cf"
+                                                                                          async="async">
 
 
+          </script>
+        </div>
 
+        <div class="duoshuo">
+          <!-- 多说评论框 start -->
+          <div class="ds-thread" data-thread-key="Windows资源管理器不断重启的解决方案" data-title="Windows 资源管理器不断重启的解决方案"
+                                                                                          data-url="http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/"></div>
+          <!-- 多说评论框 end -->
+          <!-- 多说公共JS代码 start (一个网页只需插入一次) -->
+          <script type="text/javascript">
+            var duoshuoQuery = {
+              short_name: "meteoritey"
+            };
+            (function() {
+              var ds = document.createElement('script');
+              ds.type = 'text/javascript';
+              ds.async = true;
+              ds.src = (document.location.protocol == 'https:' ? 'https:' :
+                  'http:') +
+                '//static.duoshuo.com/embed.js';
+              ds.charset = 'UTF-8';
+              (document.getElementsByTagName('head')[0] ||
+                document.getElementsByTagName('body')[0]).appendChild(ds);
+            })();
 
-<nav id="article-nav">
-  
-    <a href="/2016/07/03/大学毕业随笔/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption"><</strong>
-      <div class="article-nav-title">
-        
-          大学毕业了
-        
+          </script>
+          <!-- 多说公共JS代码 end -->
+        </div>
       </div>
-    </a>
-  
-  
-    <a href="/2016/03/28/一点儿随笔/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">一点儿随笔</div>
-      <strong class="article-nav-caption">></strong>
-    </a>
-  
-</nav>
-
-
-  
-</article>
-
-
-<div id="toc" class="toc-article">
-    <strong class="toc-title">文章目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#准备工作"><span class="toc-number">1.</span> <span class="toc-text">准备工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#修复问题"><span class="toc-number">2.</span> <span class="toc-text">修复问题</span></a></li></ol>
-</div>
-<style>
-    .left-col .switch-btn {
-        display: block;
-    }
-    .left-col .switch-area {
-        display: block;
-    }
-</style>
-
-<input type="button" id="tocButton" value="隐藏目录"  title="点击按钮隐藏或者显示文章目录">
-
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script>
-    var toc_button = document.getElementById("tocButton");
-    var toc_div = document.getElementById("toc");
-    toc_button.onclick=function() {
-        if (toc_div.style.display == "none") {
-            toc_div.style.display = "block";
-            toc_button.value = "隐藏目录";
-            document.getElementById("switch-btn").style.display = "none";
-            document.getElementById("switch-area").style.display = "none";
-        }
-        else {
-            toc_div.style.display = "none";
-            toc_button.value = "显示目录";
-            document.getElementById("switch-btn").style.display = "block";
-            document.getElementById("switch-area").style.display = "block";
-        }
-    }
-
-    if ($(".toc").length < 1) {
-        $("#toc").css("display","none");
-        $("#tocButton").css("display","none");
-        $(".switch-btn").css("display","block");
-        $(".switch-area").css("display","block");
-    }
-</script>
-
-
-
-
-
-
-
-
-<div class="share_addthis">
-  <div class="addthis_sharing_toolbox">
-
-  </div>
-  <!-- Go to www.addthis.com/dashboard to customize your tools -->
-  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-56890545bb1303cf" async="async">
-  </script>
-</div>
-
-
-
-
-<div class="duoshuo">
-	<!-- 多说评论框 start -->
-	<div class="ds-thread" data-thread-key="Windows资源管理器不断重启的解决方案" data-title="Windows 资源管理器不断重启的解决方案" data-url="http://meteoritey.github.io/2016/04/18/Windows资源管理器不断重启的解决方案/"></div>
-	<!-- 多说评论框 end -->
-	<!-- 多说公共JS代码 start (一个网页只需插入一次) -->
-	<script type="text/javascript">
-	var duoshuoQuery = {short_name:"meteoritey"};
-	(function() {
-		var ds = document.createElement('script');
-		ds.type = 'text/javascript';ds.async = true;
-		ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-		ds.charset = 'UTF-8';
-		(document.getElementsByTagName('head')[0] 
-		 || document.getElementsByTagName('body')[0]).appendChild(ds);
-	})();
-	</script>
-	<!-- 多说公共JS代码 end -->
-</div>
-
-
-
-
-</div>
       <footer id="footer">
-  <div class="outer">
-    <div id="footer-info">
-    	<div class="footer-left">
-    		&copy; 2016 MeteoriteY
-    	</div>
-      	<div class="footer-right">
-      		Designed by <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">@Litten</a> , modified by <a href="https://github.com/MeteoriteY/hexo-theme-papers" target="_blank">@MeteoriteY</a>
-      	</div>
-    </div>
-  </div>
-</footer>
+        <div class="outer">
+          <div id="footer-info">
+            <div class="footer-left">
+              &copy; 2016 MeteoriteY
+            </div>
+            <div class="footer-right">
+              Designed by
+              <a href="https://github.com/litten/hexo-theme-yilia" target="_blank">@Litten</a> , modified by
+              <a href="https://github.com/MeteoriteY/hexo-theme-papers" target="_blank">@MeteoriteY</a>
+            </div>
+          </div>
+        </div>
+      </footer>
 
     </div>
-    
-  <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+    <link rel="stylesheet" href="/fancybox/jquery.fancybox.css" type="text/css">
+
+    <script>
+      var yiliaConfig = {
+        fancybox: true,
+        mathjax: true,
+        animate: true,
+        isHome: false,
+        isPost: true,
+        isArchive: false,
+        isTag: false,
+        isCategory: false,
+        open_in_new: false
+      }
+
+    </script>
+    <script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
+    <script src="/js/main.js" type="text/javascript"></script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({ tex2jax: { inlineMath: [ ['$','$'], ["\\(","\\)"] ], processEscapes:
+      true, skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+      } }); MathJax.Hub.Queue(function() { var all = MathJax.Hub.getAllJax(), i;
+      for(i=0; i
+      < all.length; i +=1 ) { all[i].SourceElement().parentNode.className +=' has-jax'
+                                                                                      ; } }); </script>
+
+        <script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
 
 
-<script>
-	var yiliaConfig = {
-		fancybox: true,
-		mathjax: true,
-		animate: true,
-		isHome: false,
-		isPost: true,
-		isArchive: false,
-		isTag: false,
-		isCategory: false,
-		open_in_new: false
-	}
-</script>
-<script src="http://7.url.cn/edu/jslib/comb/require-2.1.6,jquery-1.9.1.min.js" type="text/javascript"></script>
-<script src="/js/main.js" type="text/javascript"></script>
-
-
-
-
-
-
-<script type="text/x-mathjax-config">
-MathJax.Hub.Config({
-    tex2jax: {
-        inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
-        processEscapes: true,
-        skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
-    }
-});
-
-MathJax.Hub.Queue(function() {
-    var all = MathJax.Hub.getAllJax(), i;
-    for(i=0; i < all.length; i += 1) {
-        all[i].SourceElement().parentNode.className += ' has-jax';                 
-    }       
-});
-</script>
-
-<script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
-</script>
-
+        </script>
 
   </div>
 </body>
+
 </html>
