@@ -33,7 +33,7 @@
   <meta property="og:image" content="http://meteoritey.github.io/2016/09/04/Gollum的折腾记录/P2.png">
   <meta property="og:image" content="http://meteoritey.github.io/2016/09/04/Gollum的折腾记录/P4.png">
   <meta property="og:image" content="http://meteoritey.github.io/2016/09/04/Gollum的折腾记录/P5.png">
-  <meta property="og:updated_time" content="2016-09-04T11:16:03.331Z">
+  <meta property="og:updated_time" content="2016-09-04T11:22:17.241Z">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Gollum的折腾记录">
   <meta name="twitter:description" content="前言
@@ -308,8 +308,9 @@
                 <p>注意： Windows 支持还在开发当中！许多东西不会正常运行, 也有许多测试是没有通过的. 这里请了解你所面临的风险。
                   <br>ps：也就是有些功能不太正常而已:P</p>
               </blockquote>
-              <h2 id="完成上面的环境配置后，以管理员权限运行Powershell并输入：">
-                <a href="#完成上面的环境配置后，以管理员权限运行Powershell并输入：" class="headerlink" title="完成上面的环境配置后，以管理员权限运行Powershell并输入："></a>完成上面的环境配置后，以管理员权限运行Powershell并输入：</h2>
+              <h2 id="使用gem命令安装">
+                <a href="#使用gem命令安装" class="headerlink" title="使用gem命令安装"></a>使用gem命令安装</h2>
+              <p>完成上面的环境配置后，以管理员权限运行Powershell并输入：</p>
               <figure class="highlight cmake">
                 <table>
                   <tr>
@@ -351,49 +352,43 @@
               <h2 id="gollum-网页交互页面介绍">
                 <a href="#gollum-网页交互页面介绍" class="headerlink" title="gollum 网页交互页面介绍"></a>gollum 网页交互页面介绍</h2>
               <ul>
-                <li>以下是网页home页面的示范：
-                  <img src="/2016/09/04/Gollum的折腾记录/P3.png" alt="home页面" title="home页面">
-                </li>
+                <li>以下是网页home页面的示范：</li>
               </ul>
+              <img src="/2016/09/04/Gollum的折腾记录/P3.png" alt="home页面" title="home页面">
               <hr>
               <ul>
                 <li>使用
                   <code>New</code>新建一个词条时，可以使用
-                  <code>/</code>来建立相应的文件夹层次结构：
-                  <img src="/2016/09/04/Gollum的折腾记录/P7.png" alt="新建页面" title="新建页面">
-                  <blockquote>
-                    <p>这里需要注意的是，文件名字不支持中文，如果键入中文名字的话，会自动把中文转换为拼音型式，但wiki的内容是支持中文显示的。具体如下图中所示：</p>
-                  </blockquote>
-                </li>
+                  <code>/</code>来建立相应的文件夹层次结构：</li>
               </ul>
+              <img src="/2016/09/04/Gollum的折腾记录/P7.png" alt="新建页面" title="新建页面">
+              <blockquote>
+                <p>这里需要注意的是，文件名字不支持中文，如果键入中文名字的话，会自动把中文转换为拼音型式，但wiki的内容是支持中文显示的。具体如下图中所示：</p>
+              </blockquote>
               <img src="/2016/09/04/Gollum的折腾记录/P8.png" alt="词条页面" title="词条页面">
               <hr>
               <ul>
-                <li>进入相应词条页面后：
-                  <img src="/2016/09/04/Gollum的折腾记录/P6.png" alt="词条页面" title="词条页面">
-                </li>
+                <li>进入相应词条页面后：</li>
               </ul>
+              <img src="/2016/09/04/Gollum的折腾记录/P6.png" alt="词条页面" title="词条页面">
               <hr>
               <ul>
                 <li>
-                  <code>Edit</code>可以用来编辑当前wiki页面：
-                  <img src="/2016/09/04/Gollum的折腾记录/P2.png" alt="编辑页面" title="编辑页面">
-                </li>
+                  <code>Edit</code>可以用来编辑当前wiki页面：</li>
               </ul>
+              <img src="/2016/09/04/Gollum的折腾记录/P2.png" alt="编辑页面" title="编辑页面">
               <hr>
               <ul>
                 <li>
-                  <code>File</code>可以显示当前wiki文件夹下面的文件结构：
-                  <img src="/2016/09/04/Gollum的折腾记录/P4.png" alt="文件夹结构" title="文件夹结构">
-                </li>
+                  <code>File</code>可以显示当前wiki文件夹下面的文件结构：</li>
               </ul>
+              <img src="/2016/09/04/Gollum的折腾记录/P4.png" alt="文件夹结构" title="文件夹结构">
               <hr>
               <ul>
                 <li>
-                  <code>history</code>可以显示当前wiki页面的编辑历史（git既视感出现！）：
-                  <img src="/2016/09/04/Gollum的折腾记录/P5.png" alt="文件夹结构" title="文件夹结构">
-                </li>
+                  <code>history</code>可以显示当前wiki页面的编辑历史（git既视感出现！）：</li>
               </ul>
+              <img src="/2016/09/04/Gollum的折腾记录/P5.png" alt="文件夹结构" title="文件夹结构">
               <hr>
               <h2 id="使用命令行方式">
                 <a href="#使用命令行方式" class="headerlink" title="使用命令行方式"></a>使用命令行方式</h2>
@@ -623,7 +618,7 @@
             <p>
               <span>发布时间:</span>2016/09/04 - 17:30:04</p>
             <p>
-              <span>最后更新:</span>2016/09/04 - 19:16:03</p>
+              <span>最后更新:</span>2016/09/04 - 19:22:17</p>
             <p>
               <span>原始链接:</span>
               <a class="post-url" href="/2016/09/04/Gollum的折腾记录/" title="Gollum的折腾记录">http://meteoritey.github.io/2016/09/04/Gollum的折腾记录/</a>
@@ -692,10 +687,10 @@
                   </a>
                 </li>
                 <li class="toc-item toc-level-2">
-                  <a class="toc-link" href="#完成上面的环境配置后，以管理员权限运行Powershell并输入：">
+                  <a class="toc-link" href="#使用gem命令安装">
                     <span class="toc-number">3.2.</span>
                     <span class="toc-text">
-                      完成上面的环境配置后，以管理员权限运行Powershell并输入：</span>
+                      使用gem命令安装</span>
                   </a>
                 </li>
               </ol>

@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://meteoritey.github.io/"/>
-  <updated>2016-09-04T11:16:03.331Z</updated>
+  <updated>2016-09-04T11:22:17.241Z</updated>
   <id>http://meteoritey.github.io/</id>
   
   <author>
@@ -20,7 +20,7 @@
     <link href="http://meteoritey.github.io/2016/09/04/Gollum%E7%9A%84%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/"/>
     <id>http://meteoritey.github.io/2016/09/04/Gollum的折腾记录/</id>
     <published>2016-09-04T09:30:04.000Z</published>
-    <updated>2016-09-04T11:16:03.331Z</updated>
+    <updated>2016-09-04T11:22:17.241Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前言&quot;&gt;
   &lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;
@@ -66,8 +66,9 @@
   &lt;p&gt;注意： Windows 支持还在开发当中！许多东西不会正常运行, 也有许多测试是没有通过的. 这里请了解你所面临的风险。
     &lt;br&gt;ps：也就是有些功能不太正常而已:P&lt;/p&gt;
 &lt;/blockquote&gt;
-&lt;h2 id=&quot;完成上面的环境配置后，以管理员权限运行Powershell并输入：&quot;&gt;
-  &lt;a href=&quot;#完成上面的环境配置后，以管理员权限运行Powershell并输入：&quot; class=&quot;headerlink&quot; title=&quot;完成上面的环境配置后，以管理员权限运行Powershell并输入：&quot;&gt;&lt;/a&gt;完成上面的环境配置后，以管理员权限运行Powershell并输入：&lt;/h2&gt;
+&lt;h2 id=&quot;使用gem命令安装&quot;&gt;
+  &lt;a href=&quot;#使用gem命令安装&quot; class=&quot;headerlink&quot; title=&quot;使用gem命令安装&quot;&gt;&lt;/a&gt;使用gem命令安装&lt;/h2&gt;
+&lt;p&gt;完成上面的环境配置后，以管理员权限运行Powershell并输入：&lt;/p&gt;
 &lt;figure class=&quot;highlight cmake&quot;&gt;
   &lt;table&gt;
     &lt;tr&gt;
@@ -109,49 +110,43 @@
 &lt;h2 id=&quot;gollum-网页交互页面介绍&quot;&gt;
   &lt;a href=&quot;#gollum-网页交互页面介绍&quot; class=&quot;headerlink&quot; title=&quot;gollum 网页交互页面介绍&quot;&gt;&lt;/a&gt;gollum 网页交互页面介绍&lt;/h2&gt;
 &lt;ul&gt;
-  &lt;li&gt;以下是网页home页面的示范：
-    &lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P3.png&quot; alt=&quot;home页面&quot; title=&quot;home页面&quot;&gt;
-  &lt;/li&gt;
+  &lt;li&gt;以下是网页home页面的示范：&lt;/li&gt;
 &lt;/ul&gt;
+&lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P3.png&quot; alt=&quot;home页面&quot; title=&quot;home页面&quot;&gt;
 &lt;hr&gt;
 &lt;ul&gt;
   &lt;li&gt;使用
     &lt;code&gt;New&lt;/code&gt;新建一个词条时，可以使用
-    &lt;code&gt;/&lt;/code&gt;来建立相应的文件夹层次结构：
-    &lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P7.png&quot; alt=&quot;新建页面&quot; title=&quot;新建页面&quot;&gt;
-    &lt;blockquote&gt;
-      &lt;p&gt;这里需要注意的是，文件名字不支持中文，如果键入中文名字的话，会自动把中文转换为拼音型式，但wiki的内容是支持中文显示的。具体如下图中所示：&lt;/p&gt;
-    &lt;/blockquote&gt;
-  &lt;/li&gt;
+    &lt;code&gt;/&lt;/code&gt;来建立相应的文件夹层次结构：&lt;/li&gt;
 &lt;/ul&gt;
+&lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P7.png&quot; alt=&quot;新建页面&quot; title=&quot;新建页面&quot;&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;这里需要注意的是，文件名字不支持中文，如果键入中文名字的话，会自动把中文转换为拼音型式，但wiki的内容是支持中文显示的。具体如下图中所示：&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P8.png&quot; alt=&quot;词条页面&quot; title=&quot;词条页面&quot;&gt;
 &lt;hr&gt;
 &lt;ul&gt;
-  &lt;li&gt;进入相应词条页面后：
-    &lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P6.png&quot; alt=&quot;词条页面&quot; title=&quot;词条页面&quot;&gt;
-  &lt;/li&gt;
+  &lt;li&gt;进入相应词条页面后：&lt;/li&gt;
 &lt;/ul&gt;
+&lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P6.png&quot; alt=&quot;词条页面&quot; title=&quot;词条页面&quot;&gt;
 &lt;hr&gt;
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;code&gt;Edit&lt;/code&gt;可以用来编辑当前wiki页面：
-    &lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P2.png&quot; alt=&quot;编辑页面&quot; title=&quot;编辑页面&quot;&gt;
-  &lt;/li&gt;
+    &lt;code&gt;Edit&lt;/code&gt;可以用来编辑当前wiki页面：&lt;/li&gt;
 &lt;/ul&gt;
+&lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P2.png&quot; alt=&quot;编辑页面&quot; title=&quot;编辑页面&quot;&gt;
 &lt;hr&gt;
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;code&gt;File&lt;/code&gt;可以显示当前wiki文件夹下面的文件结构：
-    &lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P4.png&quot; alt=&quot;文件夹结构&quot; title=&quot;文件夹结构&quot;&gt;
-  &lt;/li&gt;
+    &lt;code&gt;File&lt;/code&gt;可以显示当前wiki文件夹下面的文件结构：&lt;/li&gt;
 &lt;/ul&gt;
+&lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P4.png&quot; alt=&quot;文件夹结构&quot; title=&quot;文件夹结构&quot;&gt;
 &lt;hr&gt;
 &lt;ul&gt;
   &lt;li&gt;
-    &lt;code&gt;history&lt;/code&gt;可以显示当前wiki页面的编辑历史（git既视感出现！）：
-    &lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P5.png&quot; alt=&quot;文件夹结构&quot; title=&quot;文件夹结构&quot;&gt;
-  &lt;/li&gt;
+    &lt;code&gt;history&lt;/code&gt;可以显示当前wiki页面的编辑历史（git既视感出现！）：&lt;/li&gt;
 &lt;/ul&gt;
+&lt;img src=&quot;/2016/09/04/Gollum的折腾记录/P5.png&quot; alt=&quot;文件夹结构&quot; title=&quot;文件夹结构&quot;&gt;
 &lt;hr&gt;
 &lt;h2 id=&quot;使用命令行方式&quot;&gt;
   &lt;a href=&quot;#使用命令行方式&quot; class=&quot;headerlink&quot; title=&quot;使用命令行方式&quot;&gt;&lt;/a&gt;使用命令行方式&lt;/h2&gt;
