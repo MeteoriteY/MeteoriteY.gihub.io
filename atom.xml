@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://meteoritey.github.io/"/>
-  <updated>2016-09-04T11:36:27.163Z</updated>
+  <updated>2016-09-17T07:20:08.493Z</updated>
   <id>http://meteoritey.github.io/</id>
   
   <author>
@@ -16,11 +16,149 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>搭建属于自己的迷你wiki</title>
+    <link href="http://meteoritey.github.io/2016/09/17/%E6%90%AD%E5%BB%BA%E5%B1%9E%E4%BA%8E%E8%87%AA%E5%B7%B1%E7%9A%84%E8%BF%B7%E4%BD%A0wiki/"/>
+    <id>http://meteoritey.github.io/2016/09/17/搭建属于自己的迷你wiki/</id>
+    <published>2016-09-17T06:18:19.000Z</published>
+    <updated>2016-09-17T07:20:08.493Z</updated>
+    
+    <content type="html">&lt;h1 id=&quot;前言&quot;&gt;
+  &lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;
+&lt;p&gt;自己所建的知识型 wiki 到底有什么好处呢？这里引用
+  &lt;a href=&quot;https://github.com/dmscode/Wiki-in-box&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wiki-in-box&lt;/a&gt; 作者
+  &lt;a href=&quot;https://github.com/dmscode&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;@dmscode&lt;/a&gt; 的一句话:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;我觉得管理知识碎片的最好形式就是 Wiki，因为很多时候知识总是逃不出一个相互定义的圈子，因为这是知识的本质，这也是不懂英语的人拿到了一本英英词典却无法学会英文的原因。而
+    Wiki 中知识的相互链接恰好十分形象的表现了这一点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;刚好我本人最近记东西也是有点儿力不从心，看到这句话就打算试一下目前比较火的几款迷你型 wiki，在这里给大家抛砖，希望能砸到几个人（逃。&lt;/p&gt;
+&lt;hr&gt;
+&lt;a id=&quot;more&quot;&gt;&lt;/a&gt;
+&lt;p&gt;这篇文章将会简单地介绍三个用于搭建迷你 wikipedia 的软件：&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;https://github.com/dmscode/Wiki-in-box&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wiki-in-box&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;http://simiki.org/zh-docs/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;simiki&lt;/a&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;a href=&quot;https://github.com/gollum/gollum&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;gollum&lt;/a&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;
+&lt;p&gt;这三款 wiki 各有特点，大家可以根据喜好选择。&lt;/p&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;wiki-in-box&quot;&gt;
+  &lt;a href=&quot;#wiki-in-box&quot; class=&quot;headerlink&quot; title=&quot;wiki-in-box&quot;&gt;&lt;/a&gt;wiki-in-box&lt;/h1&gt;
+&lt;p&gt;先介绍一下 wiki-in-box，简单来说它就是一个写好的网页，并且可以利用相应组件来渲染相应的文件夹中 markdown 文件，生成相应的页面。&lt;/p&gt;
+&lt;p&gt;所以其使用方法很简单，也很多样，适合作为一个轻量级的 wiki 使用。&lt;/p&gt;
+&lt;h2 id=&quot;使用说明&quot;&gt;
+  &lt;a href=&quot;#使用说明&quot; class=&quot;headerlink&quot; title=&quot;使用说明&quot;&gt;&lt;/a&gt;使用说明&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;第一步自然是去
+    &lt;a href=&quot;https://github.com/dmscode/Wiki-in-box&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;wiki-in-box&lt;/a&gt; 的 github 页面下载整个文件夹，然后解压（当然克隆也是完全 ok 的）。&lt;/li&gt;
+  &lt;li&gt;然后修改
+    &lt;code&gt;data&lt;/code&gt; 文件夹中的
+    &lt;code&gt;index.md&lt;/code&gt;的内容即可。&lt;/li&gt;
+  &lt;li&gt;这里建议使用 index 作为网页的索引，同时可以根据喜欢微调一下
+    &lt;code&gt;index.html&lt;/code&gt; 中的内容（比如调节一下页面设计之类的）&lt;/li&gt;
+  &lt;li&gt;添加词条的方法很简单，就是把写好的 md 文件放入
+    &lt;code&gt;data&lt;/code&gt; 文件夹中，然后给前面的页面做好链接即可。&lt;/li&gt;
+  &lt;li&gt;链接规则很简单：
+    &lt;code&gt;[链接到一个页面](linux:software:vim)&lt;/code&gt;，链接是无限深度的。&lt;/li&gt;
+  &lt;li&gt;这个站点可以放在任意文件夹中，同时也可以放在网盘里面。&lt;/li&gt;
+  &lt;li&gt;如果希望在本地使用，这里我推荐一个很好用的 chrome 插件：
+    &lt;a href=&quot;https://chrome.google.com/webstore/detail/web-server-for-chrome/ofhbbkphhbklhfoeikjpcbhemlocgigb?utm_source=chrome-app-launcher-info-dialog&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;web-server-for-chrome&lt;/a&gt; 使用它，然后设置一下
+    &lt;code&gt;CHOOSE FOLDER&lt;/code&gt; 为 wiki-in-box 的文件夹，然后设置
+    &lt;code&gt;WEB SERVER URL(S)&lt;/code&gt; 为所需要的
+    &lt;code&gt;127.0.0.1:8887&lt;/code&gt; 端口号可以随意，也可以使用本地
+    &lt;code&gt;192.168.0.1xx&lt;/code&gt; 来作为地址。如果要开机启动和默认显示index.html可以在下面的
+    &lt;code&gt;Options&lt;/code&gt; 中进行相应设置，方法很简单大家自己看看就会了。然后把之前设置好的地址和端口号保存在书签中即可。&lt;/li&gt;
+  &lt;li&gt;如果要反正服务器中也很方便，可以先在 github 中建立一个仓库，把 wiki-in-box 上传到仓库中，然后在服务器（如Ubuntu系统）直接在
+    &lt;code&gt;/var/www/html/&lt;/code&gt; 中使用
+    &lt;code&gt;git clone&lt;/code&gt; 即可。这样的方式就是利用 git 来控制上传和管理，十分方便。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h2 id=&quot;缺点&quot;&gt;
+  &lt;a href=&quot;#缺点&quot; class=&quot;headerlink&quot; title=&quot;缺点&quot;&gt;&lt;/a&gt;缺点&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;
+      &lt;a href=&quot;https://github.com/dmscode/Wiki-in-box/issues/14&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;markdown 文件名不支持中文&lt;/a&gt; 的问题可以由
+      &lt;a href=&quot;https://github.com/xdsnet&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;xdsnet&lt;/a&gt; 所提供的方法解决：&lt;/p&gt;
+    &lt;blockquote&gt;
+      &lt;p&gt;我稍微跟踪了下程序，发现中文路径的问题还是出在 index.html 中，主要是 80 行的哪个规则式定义上：
+        &lt;br&gt;var reg = new RegExp(“^[\w\-\:]+$”); // 验证命名域
+        &lt;br&gt;它不匹配包含中文的 href 值，即如果 href 中包含了中文则匹配不成功，否则匹配成功。
+        &lt;br&gt;好像改成
+        &lt;br&gt;var reg = new RegExp(“^[\w\-\:\u4E00-\u9FA5\uFE30-\uFFA0]+$”); // 验证命名域
+        &lt;br&gt;就可以正确处理啦。&lt;/p&gt;
+    &lt;/blockquote&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;不支持搜索，这个就需要自己去添加了。有时候不支持搜索确实挺麻烦的……我是小白就不操作了。&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+&lt;hr&gt;
+&lt;h1 id=&quot;simiki&quot;&gt;
+  &lt;a href=&quot;#simiki&quot; class=&quot;headerlink&quot; title=&quot;simiki&quot;&gt;&lt;/a&gt;simiki&lt;/h1&gt;
+&lt;p&gt;这是一个使用 Markdown 书写 Wiki, 生成静态 HTML 页面的 wiki 框架。但也包含了一些特别的东西。比如，如同 hexo 一样可以在
+  &lt;code&gt;_config.yml&lt;/code&gt; 中完成相应的站点配置，在
+  &lt;code&gt;themes&lt;/code&gt; 添加相应的主题；添加完 md 词条后就可以使用
+  &lt;code&gt;simiki g&lt;/code&gt; 生成相应的静态文件。使用过 hexo 的话，应该会很有亲切感。&lt;/p&gt;
+&lt;h2 id=&quot;使用说明-1&quot;&gt;
+  &lt;a href=&quot;#使用说明-1&quot; class=&quot;headerlink&quot; title=&quot;使用说明&quot;&gt;&lt;/a&gt;使用说明&lt;/h2&gt;
+&lt;p&gt;如果系统是 Linux 的话，使用起来非常简单，可以从 pip 来安装 simiki。然后快速配置：
+  &lt;br&gt;
+  &lt;img src=&quot;/2016/09/17/搭建属于自己的迷你wiki/P1.png&quot; alt=&quot;Quick Start&quot; title=&quot;Quick Start&quot;&gt;
+&lt;/p&gt;
+&lt;p&gt;但如果使用 windows 就比较麻烦了，而且目前 simiki 对于 windows 的支持不是很好。安装起来比较复杂，还不太容易操作。&lt;/p&gt;
+&lt;h2 id=&quot;缺点-1&quot;&gt;
+  &lt;a href=&quot;#缺点-1&quot; class=&quot;headerlink&quot; title=&quot;缺点&quot;&gt;&lt;/a&gt;缺点&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;还是不支持全站搜索&lt;/li&gt;
+  &lt;li&gt;windows 版需要折腾，而且版本尚有问题。&lt;/li&gt;
+  &lt;li&gt;我使用的是windows，如果需要放在linux服务器上使用还挺麻烦的。&lt;/li&gt;
+  &lt;li&gt;文件夹最多支持两级目录分类，不太方便。&lt;/li&gt;
+&lt;/ol&gt;
+&lt;h1 id=&quot;Gollum&quot;&gt;
+  &lt;a href=&quot;#Gollum&quot; class=&quot;headerlink&quot; title=&quot;Gollum&quot;&gt;&lt;/a&gt;Gollum&lt;/h1&gt;
+&lt;p&gt;关于 Gollum 的相关介绍可以参照我的上一篇博文
+  &lt;a href=&quot;http://meteoritey.github.io/2016/09/04/Gollum%E7%9A%84%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/&quot;&gt;Gollum 的折腾记录&lt;/a&gt;，gollum 虽然安装起来比较复杂，用 windows 的话可能会遇到一些麻烦，不过一旦安装好了，因为其可以使用网页来创建md文件和支持搜索功能，在本地也可以使用git仓库管理模式，用起来应该算几款
+  wiki 框架中最易上手的吧。&lt;/p&gt;
+&lt;h1 id=&quot;最后&quot;&gt;
+  &lt;a href=&quot;#最后&quot; class=&quot;headerlink&quot; title=&quot;最后&quot;&gt;&lt;/a&gt;最后&lt;/h1&gt;
+&lt;p&gt;目前我在使用 wiki-in-box，感觉还是越简洁的越好越不容易出问题，而且目前支持无限链接深度也很实用。不过究竟哪款更合适，还是见仁见智选择自己觉得最顺手的一款才是最佳选择。&lt;/p&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;前言&quot;&gt;
+  &lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;
+&lt;p&gt;自己所建的知识型 wiki 到底有什么好处呢？这里引用
+  &lt;a href=&quot;https://github.com/dmscode/Wiki-in-box&quot;&gt;wiki-in-box&lt;/a&gt; 作者
+  &lt;a href=&quot;https://github.com/dmscode&quot;&gt;@dmscode&lt;/a&gt; 的一句话:&lt;/p&gt;
+&lt;blockquote&gt;
+  &lt;p&gt;我觉得管理知识碎片的最好形式就是 Wiki，因为很多时候知识总是逃不出一个相互定义的圈子，因为这是知识的本质，这也是不懂英语的人拿到了一本英英词典却无法学会英文的原因。而
+    Wiki 中知识的相互链接恰好十分形象的表现了这一点。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;刚好我本人最近记东西也是有点儿力不从心，看到这句话就打算试一下目前比较火的几款迷你型 wiki，在这里给大家抛砖，希望能砸到几个人（逃。&lt;/p&gt;
+&lt;hr&gt;
+    
+    </summary>
+    
+      <category term="软件笔记" scheme="http://meteoritey.github.io/categories/%E8%BD%AF%E4%BB%B6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+      <category term="wiki" scheme="http://meteoritey.github.io/tags/wiki/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Gollum的折腾记录</title>
     <link href="http://meteoritey.github.io/2016/09/04/Gollum%E7%9A%84%E6%8A%98%E8%85%BE%E8%AE%B0%E5%BD%95/"/>
     <id>http://meteoritey.github.io/2016/09/04/Gollum的折腾记录/</id>
     <published>2016-09-04T09:30:04.000Z</published>
-    <updated>2016-09-04T11:36:27.163Z</updated>
+    <updated>2016-09-17T06:20:18.531Z</updated>
     
     <content type="html">&lt;h1 id=&quot;前言&quot;&gt;
   &lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h1&gt;
@@ -316,7 +454,7 @@
   &lt;li&gt;文件名无法显示为中文，不过通过使用
     &lt;code&gt;gollum --h1-title&lt;/code&gt;可以用标记为
     &lt;code&gt;h1&lt;/code&gt;格式的文字作为该词条的标题。&lt;/li&gt;
-  &lt;li&gt;不知道为何无法进行认证登录，每个创建的页面下面作者均为（原谅我是个彩笔，请大家提示）。&lt;/li&gt;
+  &lt;li&gt;不知道为何无法进行认证登录，每个创建的页面下面作者均为Anonymous（原谅我是个彩笔，请大家提示）。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;h1 id=&quot;参考资料&quot;&gt;
   &lt;a href=&quot;#参考资料&quot; class=&quot;headerlink&quot; title=&quot;参考资料&quot;&gt;&lt;/a&gt;参考资料&lt;/h1&gt;
@@ -351,6 +489,8 @@
     
       <category term="软件笔记" scheme="http://meteoritey.github.io/categories/%E8%BD%AF%E4%BB%B6%E7%AC%94%E8%AE%B0/"/>
     
+    
+      <category term="wiki" scheme="http://meteoritey.github.io/tags/wiki/"/>
     
   </entry>
   
